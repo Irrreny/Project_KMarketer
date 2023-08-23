@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>KMarketer</title>
         <meta charset="utf-8">
@@ -7,10 +7,11 @@
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
         <style>
             body {
-                background-image: url(img/filter.svg);
                 background-image: url(img/cover.png);
                 background-repeat: no-repeat;
                 background-size: cover;
+                background-attachment: fixed;
+                background-position: center;
                 font-family: 'Montserrat';
                 margin: 0 auto;
             }
@@ -33,12 +34,10 @@
             }
             li {
                 display: inline;
-                position: sticky;
                 float: left;
             }
             li a {
                 color: white;
-                font-weight: 600px;
                 font-size: 14px;
                 line-height: 24px;
                 text-align: center;
@@ -48,25 +47,15 @@
                 height: 24px;
                 margin: 0 auto;
             }
-            div {
+            div.content {
                 text-align: center;
+                justify-content: center;
                 color: white;
                 font-size: 20px;
                 line-height: 30px;
-                top: 104px;
-                left: 195px;
-                width: 1050px;
-                height: 571px;
-                padding: 80px 0px 80px 0px;
+                width: 100%;
+                padding: 280px 0px 80px 0px;
                 gap: 80px;
-                position: relative;
-            }
-            p {
-                width: 860px;
-                height: 411px;
-                padding: 40px 0px 40px 0px;
-                gap: 40px;
-                position: absolute;
                 margin: 0 auto;
             }
             .button1 {
@@ -77,11 +66,16 @@
                 gap: 10px;
                 color: white;
                 font-size: 14px;
-                font-weight: 700px;
                 line-height: 28px;
                 letter-spacing: 0.2px;
                 background-color: #FFA62B;
                 text-decoration: none;
+                cursor: pointer;
+            } 
+            a.button1:hover {
+                background-color: #ea8e0c;
+                color:black;
+                font-weight: bold;
             }
             .button2 {
                 width: 154px;
@@ -92,35 +86,37 @@
                 gap: 10px;
                 color: white;
                 font-size: 14px;
-                font-weight: 700px;
                 line-height: 28px;
                 letter-spacing: 0.2px;
                 background-color: transparent;
                 text-decoration: none;
+                cursor: pointer;
+            }
+            a.button2:hover {
+                color: white;
+                font-weight: bold;
             }
         </style>
     </head>
     <body>
-        <section>
-                <nav>
+        <div>
+             <nav>
                     <a href="#" class="button0">KMarketer</a>
                     <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Product</a></li>
                     <li><a href="#">Pricing</a></li>
                     <li><a href="#">Contact</a></li>
-                    <li><a href="#"><img src="img/searchbtn.svg"></a></li>
-                    <li><a href="#"><img src="img/cartbtn.svg"></a></li>
+                    <li><a href="#"><img src="img/searchbtn.svg" alt="Search Bar"></a></li>
+                    <li><a href="#"><img src="img/cartbtn.svg" alt="Shopping Cart"></a></li>
                     </ul>                   
-            </nav>
-        </section>       
-        <div>
-            <p>
+            </nav>   
+            </div>   
+        <div class="content">
         <h1 style="line-height: 40px;">We Take Care of <br> the Future</h1>
         <h4>We know how large objects will act, but things on a <br> small scale just do not act that way.</h4>
         <a href="#" class="button1">Get Quote Now</a>
         <a href="#" class="button2">Learn More</a>
-        </p>
         </div>
     </body>
 </html>
