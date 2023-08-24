@@ -16,37 +16,31 @@
                 margin: 0 auto;
             }
             .button0 {
-                float: left;
-                padding-left: 10%;
-                width: 130px;
-                height: 32px;
-                top: 13px;
-                font-size: 24px;
-                line-height: 52px;
-                letter-spacing: 0.1px;
+                display: flex;
+                flex: 1;
+                flex-direction: row;
+                justify-content: flex-start;
                 color: white;
-                text-decoration: none;
                 margin: 0 auto;
+                margin-top: 2em;
+                padding-left: 10%;
+                flex-shrink: 1;
             }
             ul {
-                float: right;
-                padding-right: 10%;
                 display: flex;
-            }
-            li {
-                display: inline;
-                float: left;
+                flex: 1;
+                flex-direction: row;
+                justify-content: flex-end;
+                padding-right: 10%;
+                gap: 20px;
+                list-style-type: none;
             }
             li a {
                 color: white;
                 font-size: 14px;
                 line-height: 24px;
-                text-align: center;
                 text-decoration: none;
-                padding: 0px 10px 0px 10px;
                 width: 45px;
-                height: 24px;
-                margin: 0 auto;
             }
             div.content {
                 text-align: center;
@@ -71,12 +65,11 @@
                 background-color: #FFA62B;
                 text-decoration: none;
                 cursor: pointer;
+                transition: 1s;
             } 
-            a.button1:hover {
-                background-color: #ea8e0c;
-                color:black;
-                font-weight: bold;
-            }
+            .button1:hover {
+                transform: scale(1.2);           
+             }
             .button2 {
                 width: 154px;
                 height: 48px;
@@ -91,10 +84,10 @@
                 background-color: transparent;
                 text-decoration: none;
                 cursor: pointer;
+                transition: 1s;
             }
-            a.button2:hover {
-                color: white;
-                font-weight: bold;
+            .button2:hover {
+                transform: scale(1.2);
             }
         </style>
     </head>
@@ -115,8 +108,8 @@
         <div class="content">
         <h1 style="line-height: 40px;">We Take Care of <br> the Future</h1>
         <h4 style="font-weight: lighter;">We know how large objects will act, but things on a <br> small scale just do not act that way.</h4>
-        <a href="#" class="button1">Get Quote Now</a>
-        <a href="#" class="button2">Learn More</a>
+        <button class="button1">Get Quote Now</button>
+        <button class="button2">Learn More</button>
         </div>
     </body>
 </html>
