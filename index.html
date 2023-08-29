@@ -6,6 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
         <style>
+            :root {
+                --orange: #FFA62B;
+                --darkblue: #252B42;
+                --lightblue: #00A0C1;
+            }
             body {
                 margin: 0;
                 color: white;
@@ -35,6 +40,7 @@
             home-link {
                 display: flex;
                 align-items: center;
+                margin-left: 100px;
             }
            .header-page {
                 background-image: url(img/background.jpg);
@@ -45,7 +51,7 @@
                 overflow: auto;
             }
             .nav-bar {
-            margin-left: auto;
+            margin-left: 500px;
             display: flex;
             gap: 20px;
            }
@@ -73,9 +79,8 @@
             max-width: 570px;
            }
            .container {
-                max-width: 1020px;
+                max-width: 1050px;
                 margin: 0 auto;
-                padding: 0 15px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -93,9 +98,9 @@
             padding: 10px 35px;
             line-height: 26px;
             border-radius: 37px;
-            border: solid #FFA62B 1px;
+            border: solid var(--orange) 1px;
             color: white;
-            background: #FFA62B;
+            background: var(--orange);
             cursor: pointer;   
             font-weight: bolder;
             transition: 1s;
@@ -117,7 +122,7 @@
         .learn:hover {
             transform: scale(1.2); 
         }
-            @media screen and (min-width: 320px) and (max-width: 768px) {
+        @media screen and (min-width: 320px) and (max-width: 768px) {
             .banner {
                 display: flex;
                 flex-direction: column;
@@ -126,7 +131,7 @@
                 margin: 0px 0px 100px 0px;
             }
             .nav-bar {
-                margin: 0 auto;
+                margin: 0
             }
             .action-buttons {
                 margin-left: 0;
@@ -143,6 +148,67 @@
                 padding: 10px 10px;
             }
             }
+        .why-us {
+            background-color: var(--darkblue);
+            padding: 100px 195px 100px 195px;
+        }
+        .why-choose-us {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        .grid-content {
+            display: grid;
+            grid-template-columns: repeat(3,328px);
+            background-color: var(--darkblue);
+            justify-content: center;
+        }
+        .grid-item {
+            background-color: white;
+            border: 15px solid var(--darkblue);
+            text-align: center;
+            color: #737373;
+        }
+        .grid-item-header {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            padding: 35px 35px 0 35px;
+        }
+        .grid-item-text {
+            padding: 15px 40px 35px 40px;
+            margin: 0;
+            color: #737373;
+        }
+        .grid-icons {
+            display: flex;
+            width: 40px;
+            height: 40px;
+        }
+        .grid-header-text {
+            display: flex;
+            margin: 0;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 40px;
+            color: var(--darkblue);
+        }
+        @media screen and (min-width: 320px) and (max-width: 768px) {
+            .why-us {
+                padding: 0;
+            }
+            .why-choose-us {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+            }
+            .grid-content {
+                display: grid;
+                grid-template-columns: 328px;
+                padding-bottom: 73px;
+            }
+        }
         </style>
     </head>
     <body>
@@ -172,6 +238,57 @@
             </div>
             </div>
             </div>
+        </section>
+
+        <section class="why-us">
+        <div class="why-choose-us">
+            <h2>WHY CHOOSE US</h2>
+            <p>Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics</p>
+        </div>
+        <div class="grid-content">
+            <div class="grid-item">
+                <div class="grid-item-header">
+                <img class="grid-icons" src="img/icons/briefcase.svg" alt="briefcase icon">
+                <h5 class="grid-header-text">Digital Marketing</h5>
+                </div>
+                <p class="grid-item-text">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
+            </div>
+            <div class="grid-item">
+                <div class="grid-item-header">
+                    <img class="grid-icons" src="img/icons/shop.svg" alt="Store-shop icon">
+                    <h5 class="grid-header-text">Digital Marketing</h5>
+                    </div>
+                    <p class="grid-item-text">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
+            </div>
+            <div class="grid-item">
+                <div class="grid-item-header">
+                <img class="grid-icons" src="img/icons/notebook.svg" alt="Store-shop icon">
+                    <h5 class="grid-header-text">Business Growing</h5>
+                    </div>
+                    <p class="grid-item-text">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
+            </div>
+            <div class="grid-item">
+                <div class="grid-item-header">
+                <img class="grid-icons" src="img/icons/users.svg" alt="Store-shop icon">
+                    <h5 class="grid-header-text">National top 50 firms</h5>
+                    </div>
+                    <p class="grid-item-text">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
+            </div>
+            <div class="grid-item">
+                <div class="grid-item-header">
+                <img class="grid-icons" src="img/icons/stats.svg" alt="Store-shop icon">
+                    <h5 class="grid-header-text">National top 50 firms</h5>
+                    </div>
+                    <p class="grid-item-text">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
+            </div>
+            <div class="grid-item">
+                <div class="grid-item-header">
+                <img class="grid-icons" src="img/icons/award.svg" alt="Store-shop icon">
+                    <h5 class="grid-header-text">Web Development</h5>
+                    </div>
+                    <p class="grid-item-text">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
+            </div>
+        </div>
         </section>
     </body>
 </html>
