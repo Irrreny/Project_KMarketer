@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>KMarketer</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+        <style>
+            body {
+                margin: 0;
+                color: white;
+                font-size: 14px;
+                font-family: Montserrat;
+            }
+           ul {
+            padding: 0;
+            list-style: none;
+            margin: 0;
+           }
+           button {
+            padding: 0;
+           }
+            .item {
+                color: inherit;
+                text-decoration: none;
+            }
+            .banner {
+                width: 100%;
+                display: flex;
+                align-content: center;
+                margin-bottom: 150px;
+                position: sticky;
+            }
+           
+            home-link {
+                display: flex;
+                align-items: center;
+            }
+           .header-page {
+                background-image: url(img/background.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position-x: center;
+                padding-top: 40px;
+                overflow: auto;
+            }
+            .nav-bar {
+            margin-left: auto;
+            display: flex;
+            gap: 20px;
+           }
+           
+           .nav-bar .nav-list {
+                display: flex;
+                gap: 20px;
+            }
+           .action-buttons {
+            margin-left: 40px;
+            display: flex;
+            align-items: flex-end;
+            gap: 15px;
+           }
+           
+           .action-item {
+            background: transparent;
+            border: none;
+           }
+           .icon {
+            width: 16px;
+            height: 16px;
+           }
+           main-content {
+            max-width: 570px;
+           }
+           .container {
+                max-width: 1020px;
+                margin: 0 auto;
+                padding: 0 15px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+           }
+           h1, h4 {
+            text-align: center;
+           }
+           .call-to-action {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 120px;
+            gap: 20px;
+           }
+           .quote {
+            padding: 10px 35px;
+            line-height: 26px;
+            border-radius: 37px;
+            border: solid #FFA62B 1px;
+            color: white;
+            background: #FFA62B;
+            cursor: pointer;   
+            font-weight: bolder;
+            transition: 1s;
+        }
+        .quote:hover {
+            transform: scale(1.2); 
+        }
+        @media screen and (min-width: 320px) {
+            .quote {
+                padding: 0;
+                font-size: smaller;
+                padding: 10px 10px;
+            }
+        }
+           .learn {
+            padding: 10px 35px;
+            line-height: 26px;
+            border-radius: 37px;
+            border: solid white 1px;
+            color: white;
+            background: transparent;
+            cursor: pointer;
+            font-weight: bolder;
+            transition: 1s;
+        }
+        .learn:hover {
+            transform: scale(1.2); 
+        }
+        @media screen and (min-width: 320px) {
+            .learn {
+                padding: 0;
+                font-size: smaller;
+                padding: 10px 10px;
+                width: 106px;
+            }
+        }
+            @media screen and (min-width: 320px) and (max-width: 768px) {
+            .banner {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                line-height: 30px;
+                margin-bottom: 100px;}
+             .action-buttons {
+                margin-left: 0;}
+            }
+        </style>
+    </head>
+    <body>
+        <section class="header-page">
+            <div class="container">
+                <header class="banner">
+                     <a href="#" class="home-link"><img src="img/KMarketer.png" alt="Home logo"></a>
+                <nav class="nav-bar">
+                    <ul class="nav-list">
+                        <li><a href="#" class="item">Home</a></li>
+                        <li><a href="#" class="item">Product</a></li>
+                        <li><a href="#" class="item">Pricing</a></li>
+                        <li><a href="#" class="item">Contact</a></li>
+                    </ul>
+                </nav>
+                <ul class="action-buttons">
+                    <li><button class="action-item"><img src="img/searchbtn.svg" class="icon" alt="Search bar"></button></li>
+                    <li><button class="action-item"><img src="img/cartbtn.svg" class="icon" alt="Shopping cart"></button></li>
+                </ul>
+                </header>
+            <div class="main-content">
+                <h1>We Take Care of the Future</h1>
+                <h4 style="font-weight: lighter;">We know how large objects will act, but things on a small scale just do not act that way.</h4>
+            <div class="call-to-action">
+                <button class="quote">Get Quote Now</button>
+                <button class="learn">Learn More</button>
+            </div>
+            </div>
+            </div>
+        </section>
+    </body>
+</html>
