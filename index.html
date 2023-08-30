@@ -156,7 +156,8 @@
         .why-choose-us {
             display: flex;
             flex-direction: column;
-            text-align: center;
+            align-items: center;
+            flex-wrap: wrap;
         }
             .why-choose-us-head {
             font-size: 40px;
@@ -167,6 +168,8 @@
             .why-choose-us-text {
             font-weight: 500;
             line-height: 20px;
+            width: 470px;
+            text-align: center;
         }
         .grid-content {
             display: grid;
@@ -208,12 +211,20 @@
         @media screen and (min-width: 320px) and (max-width: 768px) {
             .why-us {
                 padding: 0;
+                font-size: smaller;
             }
             .why-choose-us {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 padding: 20px;
+            }
+            .why-choose-us-head {
+                width: auto;
+                text-align: center;
+            }
+            .why-choose-us-text {
+                width: auto;
             }
             .grid-content {
                 display: grid;
