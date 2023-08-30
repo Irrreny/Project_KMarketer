@@ -76,8 +76,8 @@
             width: 16px;
             height: 16px;
            }
-           main-content {
-            max-width: 570px;
+           .main-content {
+            width: 600px;
            }
            .container {
                 max-width: 1050px;
@@ -86,14 +86,25 @@
                 flex-direction: column;
                 align-items: center;
            }
-           h1, h4 {
+           .main-text {
             text-align: center;
+            font-size: 68px;
+            margin: 0;
+            padding: 20px;
+           }
+           .smaller-text {
+            text-align: center;
+            font-size: 20px;
+            font-weight: lighter;
+            margin: 0;
+            padding: 20px;
            }
            .call-to-action {
             display: flex;
             justify-content: center;
             margin-bottom: 120px;
             gap: 20px;
+            padding-top: 20px;
            }
            .quote {
             padding: 10px 35px;
@@ -148,6 +159,19 @@
                 font-size: smaller;
                 padding: 10px 10px;
             }
+            .main-content{
+                width: auto;
+            }
+            .main-text {
+                font-size: 40px;
+                margin: auto;
+                padding: 10px;
+            }
+            .smaller-text {
+                font-size: smaller;
+                margin: auto;
+                padding: 10px;
+            }
             }
         .why-us {
             background-color: var(--darkblue);
@@ -164,6 +188,7 @@
             font-weight: 700;
             line-height: 57px;
             margin: 0;
+            text-transform: uppercase;
         }
         .why-choose-us-text {
             font-weight: 500;
@@ -171,36 +196,36 @@
             width: 470px;
             text-align: center;
         }
-        .grid-content {
+        .grid-cards {
             display: grid;
             grid-template-columns: repeat(3,328px);
             background-color: var(--darkblue);
             justify-content: center;
         }
-        .grid-item {
+        .card {
             background-color: white;
             border: 15px solid var(--darkblue);
             text-align: center;
             color: #737373;
         }
-        .grid-item-header {
+        .card-header {
             display: flex;
             gap: 15px;
             justify-content: center;
             padding: 35px 35px 0 35px;
         }
-        .grid-item-text {
+        .card-content {
             padding: 15px 40px 35px 40px;
             margin: 0;
             color: #737373;
             text-align: justify;
         }
-        .grid-icons {
+        .card-icon {
             display: flex;
             width: 40px;
             height: 40px;
         }
-        .grid-header-text {
+        .card-header-text {
             display: flex;
             margin: 0;
             font-size: 16px;
@@ -226,7 +251,7 @@
             .why-choose-us-text {
                 width: auto;
             }
-            .grid-content {
+            .grid-cards {
                 display: grid;
                 grid-template-columns: 328px;
                 padding-bottom: 73px;
@@ -253,8 +278,8 @@
                 </ul>
                 </header>
             <div class="main-content">
-                <h1>We Take Care of the Future</h1>
-                <h4 style="font-weight: lighter;">We know how large objects will act, but things on a small scale just do not act that way.</h4>
+                <h1 class="main-text">We Take Care of the Future</h1>
+                <h4 class="smaller-text">We know how large objects will act, but things on a small scale just do not act that way.</h4>
             <div class="call-to-action">
                 <button class="quote">Get Quote Now</button>
                 <button class="learn">Learn More</button>
@@ -265,51 +290,51 @@
 
         <section class="why-us">
         <div class="why-choose-us">
-            <h2 class="why-choose-us-head">WHY CHOOSE US</h2>
+            <h2 class="why-choose-us-head">why choose us</h2>
             <p class="why-choose-us-text">Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics</p>
         </div>
-        <div class="grid-content">
-            <div class="grid-item">
-                <div class="grid-item-header">
-                <img class="grid-icons" src="img/icons/briefcase.svg" alt="briefcase icon">
-                <h5 class="grid-header-text">Digital Marketing</h5>
+        <div class="grid-cards">
+            <div class="card">
+                <div class="card-header">
+                <img class="card-icon" src="img/icons/briefcase.svg" alt="briefcase icon">
+                <h5 class="card-header-text">Digital Marketing</h5>
                 </div>
-                <p class="grid-item-text">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
+                <p class="card-content">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
             </div>
-            <div class="grid-item">
-                <div class="grid-item-header">
-                    <img class="grid-icons" src="img/icons/shop.svg" alt="Store-shop icon">
-                    <h5 class="grid-header-text">Digital Marketing</h5>
+            <div class="card">
+                <div class="card-header">
+                    <img class="card-icon" src="img/icons/shop.svg" alt="Store-shop icon">
+                    <h5 class="card-header-text">Digital Marketing</h5>
                     </div>
-                    <p class="grid-item-text">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
+                    <p class="card-content">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
             </div>
-            <div class="grid-item">
-                <div class="grid-item-header">
-                <img class="grid-icons" src="img/icons/notebook.svg" alt="Store-shop icon">
-                    <h5 class="grid-header-text">Business Growing</h5>
+            <div class="card">
+                <div class="card-header">
+                <img class="card-icon" src="img/icons/notebook.svg" alt="Notebook icon">
+                    <h5 class="card-header-text">Business Growing</h5>
                     </div>
-                    <p class="grid-item-text">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
+                    <p class="card-content">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
             </div>
-            <div class="grid-item">
-                <div class="grid-item-header">
-                <img class="grid-icons" src="img/icons/users.svg" alt="Store-shop icon">
-                    <h5 class="grid-header-text">National top 50 firms</h5>
+            <div class="card">
+                <div class="card-header">
+                <img class="card-icon" src="img/icons/users.svg" alt="Users icon">
+                    <h5 class="card-header-text">National top 50 firms</h5>
                     </div>
-                    <p class="grid-item-text">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
+                    <p class="card-content">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
             </div>
-            <div class="grid-item">
-                <div class="grid-item-header">
-                <img class="grid-icons" src="img/icons/stats.svg" alt="Store-shop icon">
-                    <h5 class="grid-header-text">National top 50 firms</h5>
+            <div class="card">
+                <div class="card-header">
+                <img class="card-icon" src="img/icons/stats.svg" alt="Statistics icon">
+                    <h5 class="card-header-text">National top 50 firms</h5>
                     </div>
-                    <p class="grid-item-text">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
+                    <p class="card-content">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
             </div>
-            <div class="grid-item">
-                <div class="grid-item-header">
-                <img class="grid-icons" src="img/icons/award.svg" alt="Store-shop icon">
-                    <h5 class="grid-header-text">Web Development</h5>
+            <div class="card">
+                <div class="card-header">
+                <img class="card-icon" src="img/icons/award.svg" alt="Award icon">
+                    <h5 class="card-header-text">Web Development</h5>
                     </div>
-                    <p class="grid-item-text">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
+                    <p class="card-content">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
             </div>
         </div>
         </section>
