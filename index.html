@@ -16,6 +16,7 @@
                 color: white;
                 font-size: 14px;
                 font-family: Montserrat;
+                letter-spacing: 0.2px;
             }
            ul {
             padding: 0;
@@ -155,6 +156,19 @@
         .why-choose-us {
             display: flex;
             flex-direction: column;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .why-choose-us-head {
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 57px;
+            margin: 0;
+        }
+        .why-choose-us-text {
+            font-weight: 500;
+            line-height: 20px;
+            width: 470px;
             text-align: center;
         }
         .grid-content {
@@ -179,6 +193,7 @@
             padding: 15px 40px 35px 40px;
             margin: 0;
             color: #737373;
+            text-align: justify;
         }
         .grid-icons {
             display: flex;
@@ -189,19 +204,27 @@
             display: flex;
             margin: 0;
             font-size: 16px;
-            font-weight: 700;
+            font-weight: 900;
             line-height: 40px;
             color: var(--darkblue);
         }
         @media screen and (min-width: 320px) and (max-width: 768px) {
             .why-us {
                 padding: 0;
+                font-size: smaller;
             }
             .why-choose-us {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 padding: 20px;
+            }
+            .why-choose-us-head {
+                width: auto;
+                text-align: center;
+            }
+            .why-choose-us-text {
+                width: auto;
             }
             .grid-content {
                 display: grid;
@@ -242,8 +265,8 @@
 
         <section class="why-us">
         <div class="why-choose-us">
-            <h2>WHY CHOOSE US</h2>
-            <p>Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics</p>
+            <h2 class="why-choose-us-head">WHY CHOOSE US</h2>
+            <p class="why-choose-us-text">Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics</p>
         </div>
         <div class="grid-content">
             <div class="grid-item">
