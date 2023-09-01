@@ -39,6 +39,7 @@
                 display: flex;
                 align-content: center;
                 margin-bottom: 150px;
+                justify-content: center;
             }
            
             home-link {
@@ -81,14 +82,14 @@
             height: 16px;
            }
            .main-content {
-            width: 600px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            margin: 0 auto;
            }
            .container {
-                max-width: 1050px;
-                margin: 0 auto;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+                padding: 0 195px; 
            }
            .main-text {
             text-align: center;
@@ -139,6 +140,9 @@
             transform: scale(1.2); 
         }
         @media screen and (min-width: 320px) and (max-width: 768px) {
+            .container {
+                padding: 0;
+            }
             .banner {
                 display: flex;
                 flex-direction: column;
@@ -293,6 +297,7 @@
         </section>
 
         <section class="features">
+            <div class="container">
         <div class="section-header">
             <h2 class="section-header-title">why choose us</h2>
             <p class="section-header-text">Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics</p>
@@ -341,6 +346,7 @@
                     <p class="card-content">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
             </div>
         </div>
+    </div>
         </section>
     </body>
 </html>
