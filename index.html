@@ -89,7 +89,9 @@
             margin: 0 auto;
            }
            .container {
-                padding: 0 195px; 
+                max-width: 1050px;
+                margin: 0 auto;
+                padding: 0 15px;
            }
            .main-text {
             text-align: center;
@@ -282,6 +284,7 @@
             flex-direction: row;
             gap: 20px;
             align-items: center;
+            padding-right: 10px;
         }
         hr {
             border: none; 
@@ -323,7 +326,11 @@
             border: 1px solid #E6E6E6;
             background-color: #F9F9F9;
             padding: 15px 20px;
+            flex-grow: 1;
+            outline-color: var(--orange);
+            outline-width: 1px;
         }
+    
         .footer-email:hover {
             border: 1px solid white;
         }
