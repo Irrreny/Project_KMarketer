@@ -191,7 +191,7 @@
                 padding: 10px;
             }
             }
-        .features, .clients, .team {
+        .features, .clients, .team, .video {
             background-color: var(--darkblue);
         }
         .section-header {
@@ -356,6 +356,36 @@
                 display: block;
             }
         }
+        .video {
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            background-image:  linear-gradient(to bottom, rgba(37, 43, 66, 1), rgba(0, 0, 0, 0.50)), url(img/backgroundvideo.png);
+            padding-bottom: 80px;
+        }
+        .content-video {
+            display:table;
+            width:auto;
+            position:relative;
+            width:50%;
+        }
+        .playpause {
+            background-image:url(img/play.svg);
+            background-color: var(--lightblue);
+            background-repeat:no-repeat;
+            width: 100px;
+            height: 100px;
+            border-radius: 73px;
+            position: absolute;
+            left: 0%;
+            right: 0%;
+            top: 0%;
+            bottom: 0%;
+            margin: auto;
+            background-position: center;
+            cursor: pointer;
+        }
+       
         .footer {
             background-color: var(--darkblue);
         }
@@ -559,6 +589,22 @@
             </div>
         </div>
     </div>
+        </section>
+
+        <section class="video">
+            <div class="container">
+                <div class="section-header" id="clients-header">
+                    <h2 class="section-header-title">We are providing best business service.</h2>
+                    <p class="section-header-text">Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics </p>
+                </div>
+                <div class="content-video">
+                    <video class="video" controls poster="img/cover-video.jpg">
+                        <source src="https://media.geeksforgeeks.org/wp-content/uploads/20200409094356/Placement100-_-GeeksforGeeks2.mp4" type="video/mp4">
+                    This video is not supported by your browser.
+                    </video>
+                    <div class="playpause"></div>
+                </div>
+            </div>
         </section>
 
         <section class="clients">
