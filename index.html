@@ -333,15 +333,27 @@
             margin: 0;
             font-weight: 600;
         }
+        #ceo {
+            text-transform: uppercase;
+        }
         .team-card-links {
             display: flex;
             gap: 15px;
             justify-content: center;
             align-items: last baseline;
         }
+        .photo-toshow {
+            display: none;
+        }
         @media screen and (min-width: 320px) and (max-width: 768px) {
             #clients-header {
                 padding-bottom: 60px;
+            }
+            .photo-tohide {
+                display: none;
+            }
+            .photo-toshow {
+                display: block;
             }
         }
         .footer {
@@ -568,7 +580,7 @@
                             <div class="card-footer">
                                 <img class="card-photo-icon" src="img/icons/photo_regina.svg" alt="photo icon of regina miles">
                                 <a href="#" class="card-name-link">Regina Miles</a>
-                                <h6>ceo</h6>
+                                <h6 id="ceo">ceo</h6>
                             </div>
                             </div>
 
@@ -615,10 +627,11 @@
                 </div>
                 <div class="grid-cards">
                     <div class="card" id="team-card">
-                        <img src="img/coverphoto-regina.png" alt="photo of CEO">
+                        <img class="photo-tohide" src="img/coverphoto-regina.png" alt="photo of CEO">
+                        <img class="photo-toshow" src="img/mediaphoto-girl.png" alt="photo of CEO">
                         <div class="card-body">
                             <h5>Regina Miles</h5>
-                            <p class="team-card-job">ceo</p>
+                            <p class="team-card-job" id="ceo">ceo</p>
                             <div class="team-card-links">
                                 <a href="#"><img src="img/icons/facebook-blue.svg" alt="facebook link"></a>
                                 <a href="#"><img src="img/icons/instagram-blue.svg" alt="instagram link"></a>
@@ -627,7 +640,8 @@
                         </div>
                     </div>
                     <div class="card" id="team-card">
-                        <img src="img/coverphoto-regina.png" alt="photo of Consultant">
+                        <img class="photo-tohide" src="img/coverphoto-regina.png" alt="photo of Consultant">
+                        <img class="photo-toshow" src="img/mediaphoto-guy.png" alt="photo of CEO">
                         <div class="card-body">
                             <h5>Rodney Stratton</h5>
                             <p class="team-card-job">Consultant</p>
@@ -639,7 +653,8 @@
                         </div>
                     </div>
                     <div class="card" id="team-card">
-                        <img src="img/coverphoto-avie.png" alt="photo of Co-Founder">
+                        <img class="photo-tohide" src="img/coverphoto-avie.png" alt="photo of Co-Founder">
+                        <img class="photo-toshow" src="img/mediaphoto-girl.png" alt="photo of CEO">
                         <div class="card-body">
                             <h5>Avie Beaton</h5>
                             <p class="team-card-job">Co-Founder</p>
