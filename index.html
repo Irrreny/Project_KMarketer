@@ -191,7 +191,7 @@
                 padding: 10px;
             }
             }
-        .features {
+        .features, .clients, .team {
             background-color: var(--darkblue);
         }
         .section-header {
@@ -263,7 +263,7 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                padding: 20px;
+                padding: 45px 0;
             }
             .section-header-title {
                 width: auto;
@@ -274,13 +274,11 @@
             }
             .grid-cards {
                 display: grid;
-                grid-template-columns: 328px;
+                grid-template-columns: auto;
                 padding-bottom: 73px;
             }
         }
-        .clients {
-            background-color: var(--darkblue);
-        }
+        
         #clients-header {
             padding-bottom: 80px;
         }
@@ -315,7 +313,37 @@
         text-align: left;
         font-size: 14px;
        }
-        
+       #team-card {
+        padding: 0;
+       }
+       .card-body {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 30px 30px;
+       }
+       h5 {
+        margin: 0;
+        color: var(--darkblue);
+        font-size: 16px;
+        font-weight: 800;
+       }
+        .team-card-job {
+            margin: 0;
+            font-weight: 600;
+        }
+        .team-card-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: last baseline;
+        }
+        @media screen and (min-width: 320px) and (max-width: 768px) {
+            #clients-header {
+                padding-bottom: 60px;
+            }
+        }
         .footer {
             background-color: var(--darkblue);
         }
@@ -581,19 +609,44 @@
 
         <section class="team">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header" id="clients-header">
                     <h2 class="section-header-title">Meet Our Team</h2>
                     <p class="section-header-text">Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics </p>
                 </div>
                 <div class="grid-cards">
                     <div class="card" id="team-card">
+                        <img src="img/coverphoto-regina.png" alt="photo of CEO">
                         <div class="card-body">
                             <h5>Regina Miles</h5>
                             <p class="team-card-job">ceo</p>
                             <div class="team-card-links">
-                                <a href="#"><img src="img/" alt="facebook link"></a>
-                                <a href="#"><img src="img/" alt="instagram link"></a>
-                                <a href="#"><img src="img/" alt="twitter link"></a>
+                                <a href="#"><img src="img/icons/facebook-blue.svg" alt="facebook link"></a>
+                                <a href="#"><img src="img/icons/instagram-blue.svg" alt="instagram link"></a>
+                                <a href="#"><img src="img/icons/twitter-blue.svg" alt="twitter link"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" id="team-card">
+                        <img src="img/coverphoto-regina.png" alt="photo of Consultant">
+                        <div class="card-body">
+                            <h5>Rodney Stratton</h5>
+                            <p class="team-card-job">Consultant</p>
+                            <div class="team-card-links">
+                                <a href="#"><img src="img/icons/facebook-blue.svg" alt="facebook link"></a>
+                                <a href="#"><img src="img/icons/instagram-blue.svg" alt="instagram link"></a>
+                                <a href="#"><img src="img/icons/twitter-blue.svg" alt="twitter link"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" id="team-card">
+                        <img src="img/coverphoto-avie.png" alt="photo of Co-Founder">
+                        <div class="card-body">
+                            <h5>Avie Beaton</h5>
+                            <p class="team-card-job">Co-Founder</p>
+                            <div class="team-card-links">
+                                <a href="#"><img src="img/icons/facebook-blue.svg" alt="facebook link"></a>
+                                <a href="#"><img src="img/icons/instagram-blue.svg" alt="instagram link"></a>
+                                <a href="#"><img src="img/icons/twitter-blue.svg" alt="twitter link"></a>
                             </div>
                         </div>
                     </div>
