@@ -226,6 +226,7 @@
         .card {
             background-color: white;
             border: 15px solid var(--darkblue);
+            border-radius: 5px;
             text-align: center;
             color: var(--textgrey);
             padding: 30px;
@@ -306,7 +307,7 @@
        .card-name-link:hover {
         text-decoration: underline;
        }
-       h6 {
+       .card-footer-name {
         margin: 0;
         color: var(--darkblue);
         font-weight: 600;
@@ -323,7 +324,7 @@
         gap: 10px;
         padding: 10px 30px 30px;
        }
-       h5 {
+       .card-body-name {
         margin: 0;
         color: var(--darkblue);
         font-size: 16px;
@@ -380,7 +381,7 @@
             left: 0%;
             right: 0%;
             top: 0%;
-            bottom: 0%;
+            bottom: 15%;
             margin: auto;
             background-position: center;
             cursor: pointer;
@@ -598,7 +599,7 @@
                     <p class="section-header-text">Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics </p>
                 </div>
                 <div class="content-video">
-                    <video class="video" controls poster="img/cover-video.jpg">
+                    <video class="video" poster="img/cover-video.jpg" controls>
                         <source src="https://media.geeksforgeeks.org/wp-content/uploads/20200409094356/Placement100-_-GeeksforGeeks2.mp4" type="video/mp4">
                     This video is not supported by your browser.
                     </video>
@@ -626,7 +627,7 @@
                             <div class="card-footer">
                                 <img class="card-photo-icon" src="img/icons/photo_regina.svg" alt="photo icon of regina miles">
                                 <a href="#" class="card-name-link">Regina Miles</a>
-                                <h6 id="ceo">ceo</h6>
+                                <h6 class="card-footer-name" id="ceo">ceo</h6>
                             </div>
                             </div>
 
@@ -642,7 +643,7 @@
                                 <div class="card-footer">
                                     <img class="card-photo-icon" src="img/icons/photo_ashley.svg" alt="photo icon of ashley fletcher">
                                     <a href="#" class="card-name-link">Ashley Fletcher</a>
-                                    <h6>Designer</h6>
+                                    <h6 class="card-footer-name">Designer</h6>
                                 </div>
                             </div>
 
@@ -658,7 +659,7 @@
                                     <div class="card-footer">
                                         <img class="card-photo-icon" src="img/icons/photo_avie.svg" alt="photo icon of avie beaton">
                                         <a href="#" class="card-name-link">Avie Beaton</a>
-                                        <h6>Co-founder</h6>
+                                        <h6 class="card-footer-name">Co-founder</h6>
                                     </div>
                                 </div>
                         </div>
@@ -676,7 +677,7 @@
                         <img class="photo-tohide" src="img/coverphoto-regina.png" alt="photo of CEO">
                         <img class="photo-toshow" src="img/mediaphoto-girl.png" alt="photo of CEO">
                         <div class="card-body">
-                            <h5>Regina Miles</h5>
+                            <h5 class="card-body-name">Regina Miles</h5>
                             <p class="team-card-job" id="ceo">ceo</p>
                             <div class="team-card-links">
                                 <a href="#"><img src="img/icons/facebook-blue.svg" alt="facebook link"></a>
@@ -689,7 +690,7 @@
                         <img class="photo-tohide" src="img/coverphoto-regina.png" alt="photo of Consultant">
                         <img class="photo-toshow" src="img/mediaphoto-guy.png" alt="photo of CEO">
                         <div class="card-body">
-                            <h5>Rodney Stratton</h5>
+                            <h5 class="card-body-name">Rodney Stratton</h5>
                             <p class="team-card-job">Consultant</p>
                             <div class="team-card-links">
                                 <a href="#"><img src="img/icons/facebook-blue.svg" alt="facebook link"></a>
@@ -702,7 +703,7 @@
                         <img class="photo-tohide" src="img/coverphoto-avie.png" alt="photo of Co-Founder">
                         <img class="photo-toshow" src="img/mediaphoto-girl.png" alt="photo of CEO">
                         <div class="card-body">
-                            <h5>Avie Beaton</h5>
+                            <h5 class="card-body-name">Avie Beaton</h5>
                             <p class="team-card-job">Co-Founder</p>
                             <div class="team-card-links">
                                 <a href="#"><img src="img/icons/facebook-blue.svg" alt="facebook link"></a>
