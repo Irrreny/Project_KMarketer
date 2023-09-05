@@ -94,8 +94,7 @@
            }
            .container {
                 max-width: 1050px;
-                margin: 0 auto;
-                padding: 0 195px;
+                margin: 0 195px;
            }
            .main-text {
             text-align: center;
@@ -199,6 +198,7 @@
             padding-top: 80px;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             flex-wrap: wrap;
         }
         .section-header-title {
@@ -360,15 +360,17 @@
         .video {
             margin: 0 auto;
             display: flex;
-            align-items: center;
             background-image:  linear-gradient(to bottom, rgba(37, 43, 66, 1), rgba(0, 0, 0, 0.50)), url(img/backgroundvideo.png);
             padding-bottom: 80px;
+            justify-content: center;
+            align-items: center;
         }
         .content-video {
             display:table;
             width:auto;
             position:relative;
             width:50%;
+            
         }
         .playpause {
             background-image:url(img/play.svg);
@@ -433,6 +435,9 @@
             text-decoration: none;
             color: var(--grey);
         }
+        .footer-link:hover {
+            text-decoration: underline;
+        }
         .footer-subscribe {
             display: flex;
             flex-direction: row;
@@ -463,6 +468,8 @@
             background-color: var(--orange);
             color: white;
             cursor: pointer;
+            font-size: 14px;
+            font-weight: 400;
         }
         .footer-button:hover {
             border: 1px solid white;
@@ -512,7 +519,9 @@
             background-image: url(img/backgroundcontact-us.jpg);
             background-size: cover;
             background-repeat: no-repeat;
-            
+            display: flex;
+            background-position-y: center;
+            overflow: auto;
         }
         .form-footer {
             background-color: white;
@@ -523,9 +532,110 @@
             grid-template-rows: repeat(4, auto);
             gap: 20px;
             justify-content: left;
+            padding: 40px 0;
         }
         .form-textarea {
         grid-column: 1 / span 2;
+        }
+        .header-secondary {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 24px;
+            padding-top: 90px;
+            margin: 0;
+        }
+        .header-primary {
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 57px;
+            margin: 0;
+        }
+        .form-data {
+            align-items: flex-start;
+            padding: 15px 0 15px 20px;
+            border: 1px solid var(--mutedgrey);
+            background-color: #F9F9F9;
+            border-radius: 5px;
+            width: 250px;
+            outline-color: var(--orange);
+        }
+        .form-select {
+            align-items: flex-start;
+            padding: 15px 0 15px 20px;
+            border: 1px solid var(--mutedgrey);
+            background-color: #F9F9F9;
+            border-radius: 5px;
+            width: 273px;
+            color: var(--mutedgrey);
+            font-weight: 600;
+            font-family: Montserrat;
+            outline-color: var(--orange);
+        }
+        .form-textarea {
+            align-items: flex-start;
+            padding: 15px 0 100px 20px;
+            border: 1px solid var(--mutedgrey);
+            background-color: #F9F9F9;
+            border-radius: 5px;
+            outline-color: var(--orange);
+        }
+        ::placeholder {
+            color: var(--mutedgrey);
+            font-weight: 600;
+            line-height: 24px;
+            letter-spacing: 0.2px;
+            font-family: Montserrat;
+        }
+        .form-button {
+            padding: 15px 40px;
+            background-color: var(--orange);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-weight: 700;
+            line-height: 28px;
+            letter-spacing: 0.2px;
+            font-size: 14px;
+            width: 200px;
+            cursor: pointer;
+            margin: 20px 0 50px 0;
+            transition: 1s;
+        }
+        .form-button:hover {
+            transform: scale(1.2); 
+        }
+        .form-contact {
+            display: grid;
+            grid-template-columns: auto auto;
+            padding: 40px 0;
+            column-gap: 360px;
+        }
+        .form-footer-header {
+            color: var(--darkblue);
+            font-size: 24px;
+            font-weight: 900px;
+            line-height: 32px;
+            margin: 0;
+            padding-bottom: 10px;
+        }
+        .form-footer-par {
+            color: var(--textgrey);
+            margin: 0;
+        }
+        .form-footer-button {
+            background-color: var(--orange);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            padding: 15px 40px;
+            font-weight: 700;
+            line-height: 28px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 1s;
+        }
+        .form-footer-button:hover {
+            transform: scale(1.2); 
         }
         </style>
     </head>
@@ -742,14 +852,14 @@
               <form class="form-appointment">
                 <input type="text" class="form-data" name="fullname" placeholder="Full Name" required>
                 <input type="email" class="form-data" name="email" placeholder="example@gmail.com" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}" required>
-                <select class="form-date" name="date">
+                <select class="form-select" name="date">
                     <option value="">Please Select</option>
                     <option value="mo">Monday</option>
                     <option value="tu">Tuesday</option>
                     <option value="we">Wednesday</option>
                     <option value="th">Thursday</option>
                 </select>
-                <select class="form-time" name="time">
+                <select class="form-select" name="time">
                     <option value="">4:00 Available</option>
                     <option value="10am">10am</option>
                     <option value="11am">11am</option>
@@ -764,9 +874,11 @@
         <section class="form-footer">
             <div class="container">
                 <form class="form-contact">
+                    <div class="form-footer-text">
                     <h3 class="form-footer-header">Consulting Agency For Your Business</h3>
-                    <p class="form-footer-text">the quick fox jumps over the lazy dog</p>
-                    <input class="form-button" type="submit" value="Contact-us">
+                    <p class="form-footer-par">the quick fox jumps over the lazy dog</p>
+                    </div>
+                    <input class="form-footer-button" type="submit" value="Contact Us">
                 </form>
             </div>
         </section>
