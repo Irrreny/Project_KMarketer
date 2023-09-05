@@ -95,7 +95,7 @@
            .container {
                 max-width: 1050px;
                 margin: 0 auto;
-                padding: 0 15px;
+                padding: 0 195px;
            }
            .main-text {
             text-align: center;
@@ -426,7 +426,7 @@
             font-weight: 700;
             line-height: 24px;
             margin: 0;
-            padding-bottom: 10px;
+            padding: 40px 0;
             gap: 20px;
         }
         .footer-link {
@@ -507,6 +507,25 @@
                 text-align: center;
                 padding: 25px 45px;
             }
+        }
+        .contact-us {
+            background-image: url(img/backgroundcontact-us.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            
+        }
+        .form-footer {
+            background-color: white;
+        }
+        .form-appointment {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: repeat(4, auto);
+            gap: 20px;
+            justify-content: left;
+        }
+        .form-textarea {
+        grid-column: 1 / span 2;
         }
         </style>
     </head>
@@ -718,9 +737,9 @@
 
         <section class="contact-us">
             <div class="container">
-              <form class="appointment">
                 <h5 class="header-secondary">Contact Us</h5>
                 <h2 class="header-primary">Make an Appointment</h2>
+              <form class="form-appointment">
                 <input type="text" class="form-data" name="fullname" placeholder="Full Name" required>
                 <input type="email" class="form-data" name="email" placeholder="example@gmail.com" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}" required>
                 <select class="form-date" name="date">
