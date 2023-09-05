@@ -94,7 +94,9 @@
            }
            .container {
                 max-width: 1050px;
-                margin: 0 195px;
+                margin: 0 auto;
+                justify-content: center;
+                align-items: center;
            }
            .main-text {
             text-align: center;
@@ -147,6 +149,7 @@
         @media screen and (min-width: 320px) and (max-width: 768px) {
             .container {
                 padding: 0 40px;
+                margin: 0;
             }
             .banner {
                 display: flex;
@@ -190,7 +193,7 @@
                 padding: 10px;
             }
             }
-        .features, .clients, .team, .video {
+        .features, .clients, .team {
             background-color: var(--darkblue);
         }
         .section-header {
@@ -357,7 +360,7 @@
                 display: block;
             }
         }
-        .video {
+        .video-section {
             margin: 0 auto;
             display: flex;
             background-image:  linear-gradient(to bottom, rgba(37, 43, 66, 1), rgba(0, 0, 0, 0.50)), url(img/backgroundvideo.png);
@@ -366,10 +369,10 @@
             align-items: center;
         }
         .content-video {
-            display:table;
-            width:auto;
-            position:relative;
-            width:50%;
+            display: table;
+            width: auto;
+            position: relative;
+            width: 50%;
             
         }
         .playpause {
@@ -387,8 +390,7 @@
             margin: auto;
             background-position: center;
             cursor: pointer;
-        }
-       
+        }       
         .footer {
             background-color: var(--darkblue);
         }
@@ -515,6 +517,7 @@
                 padding: 25px 45px;
             }
         }
+       
         .contact-us {
             background-image: url(img/backgroundcontact-us.jpg);
             background-size: cover;
@@ -721,9 +724,9 @@
     </div>
         </section>
 
-        <section class="video">
+        <section class="video-section">
             <div class="container">
-                <div class="section-header" id="clients-header">
+                <div class="section-header">
                     <h2 class="section-header-title">We are providing best business service.</h2>
                     <p class="section-header-text">Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics </p>
                 </div>
@@ -872,7 +875,7 @@
             </div>
         </section>
         <section class="form-footer">
-            <div class="container">
+            <div class="container" id="container-contact">
                 <form class="form-contact">
                     <div class="form-footer-text">
                     <h3 class="form-footer-header">Consulting Agency For Your Business</h3>
