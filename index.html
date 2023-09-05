@@ -95,8 +95,6 @@
            .container {
                 max-width: 1050px;
                 margin: 0 auto;
-                justify-content: center;
-                align-items: center;
            }
            .main-text {
             text-align: center;
@@ -526,6 +524,15 @@
             background-position-y: center;
             overflow: auto;
         }
+        .container-contact {
+            margin: 0 auto;
+            justify-content: left;
+            align-items: flex-start;
+            display: flex;
+            flex-direction: column;
+            padding-right: 25%;
+        }
+       
         .form-footer {
             background-color: white;
         }
@@ -849,7 +856,7 @@
         </section>
 
         <section class="contact-us">
-            <div class="container">
+            <div class="container-contact">
                 <h5 class="header-secondary">Contact Us</h5>
                 <h2 class="header-primary">Make an Appointment</h2>
               <form class="form-appointment">
@@ -875,7 +882,7 @@
             </div>
         </section>
         <section class="form-footer">
-            <div class="container" id="container-contact">
+            <div class="container">
                 <form class="form-contact">
                     <div class="form-footer-text">
                     <h3 class="form-footer-header">Consulting Agency For Your Business</h3>
