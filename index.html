@@ -10,6 +10,9 @@
                 --orange: #FFA62B;
                 --darkblue: #252B42;
                 --lightblue: #00A0C1;
+                --yellow: #F3CD03;
+                --mutedgrey: #BDBDBD;
+                --textgrey: #737373;
             }
             body {
                 margin: 0;
@@ -33,6 +36,7 @@
             .item:hover {
                 color: var(--orange);
                 font-weight: bolder;
+                text-decoration: underline;
             }
             .banner {
                 width: 100%;
@@ -187,12 +191,12 @@
                 padding: 10px;
             }
             }
-        .features {
+        .features, .clients, .team, .video {
             background-color: var(--darkblue);
         }
         .section-header {
             display: flex;
-            padding-top: 100px;
+            padding-top: 80px;
             flex-direction: column;
             align-items: center;
             flex-wrap: wrap;
@@ -202,7 +206,9 @@
             font-weight: 700;
             line-height: 57px;
             margin: 0;
-            text-transform: uppercase;
+        }
+        #features-title {
+        text-transform: uppercase;
         }
         .section-header-text {
             font-weight: 500;
@@ -221,27 +227,27 @@
             background-color: white;
             border: 15px solid var(--darkblue);
             text-align: center;
-            color: #737373;
+            color: var(--textgrey);
+            padding: 30px;
+            gap: 20px;
+            display: inherit;
         }
         .card-header {
             display: flex;
             gap: 15px;
-            justify-content: center;
-            padding: 35px 35px 0 35px;
+            justify-content: baseline;
         }
         .card-content {
-            padding: 15px 40px 35px 40px;
             margin: 0;
-            color: #737373;
+            color: var(--textgrey);
             text-align: justify;
+            font-weight: 500;
         }
         .card-icon {
-            display: flex;
             width: 40px;
             height: 40px;
         }
         .card-header-text {
-            display: flex;
             margin: 0;
             font-size: 16px;
             font-weight: 900;
@@ -257,7 +263,7 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                padding: 20px;
+                padding: 45px 0;
             }
             .section-header-title {
                 width: auto;
@@ -268,11 +274,118 @@
             }
             .grid-cards {
                 display: grid;
-                grid-template-columns: 328px;
+                grid-template-columns: auto;
                 padding-bottom: 73px;
             }
         }
         
+        #clients-header {
+            padding-bottom: 80px;
+        }
+        .clients-card-header {
+            display: flex;
+        }
+        .clients-card-icon {
+            width: 22px;
+            height: 22px;
+        }
+        .card-footer {
+            display: grid;
+            grid-template-columns: repeat(2,auto);
+            justify-content: flex-start;
+            column-gap: 15px;
+        }
+       .card-photo-icon {
+        grid-row: 1 / span 2;
+       }
+       .card-name-link {
+        color: var(--orange);
+        text-decoration: none;
+        font-weight: 600;
+       }
+       .card-name-link:hover {
+        text-decoration: underline;
+       }
+       h6 {
+        margin: 0;
+        color: var(--darkblue);
+        font-weight: 600;
+        text-align: left;
+        font-size: 14px;
+       }
+       #team-card {
+        padding: 0;
+       }
+       .card-body {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 30px 30px;
+       }
+       h5 {
+        margin: 0;
+        color: var(--darkblue);
+        font-size: 16px;
+        font-weight: 800;
+       }
+        .team-card-job {
+            margin: 0;
+            font-weight: 600;
+        }
+        #ceo {
+            text-transform: uppercase;
+        }
+        .team-card-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: last baseline;
+        }
+        .photo-toshow {
+            display: none;
+        }
+        @media screen and (min-width: 320px) and (max-width: 768px) {
+            #clients-header {
+                padding-bottom: 60px;
+            }
+            .photo-tohide {
+                display: none;
+            }
+            .photo-toshow {
+                display: block;
+            }
+        }
+        .video {
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            background-image:  linear-gradient(to bottom, rgba(37, 43, 66, 1), rgba(0, 0, 0, 0.50)), url(img/backgroundvideo.png);
+            padding-bottom: 80px;
+        }
+        .content-video {
+            display:table;
+            width:auto;
+            position:relative;
+            width:50%;
+        }
+        .playpause {
+            background-image:url(img/play.svg);
+            background-color: var(--lightblue);
+            background-repeat:no-repeat;
+            width: 100px;
+            height: 100px;
+            border-radius: 73px;
+            position: absolute;
+            left: 0%;
+            right: 0%;
+            top: 0%;
+            bottom: 0%;
+            margin: auto;
+            background-position: center;
+            cursor: pointer;
+        }
+       
         .footer {
             background-color: var(--darkblue);
         }
@@ -356,7 +469,7 @@
         }
         .form-text {
             font-size: 12px; 
-            color: #BDBDBD; 
+            color: var(--mutedgrey); 
             margin: 0;
         }
         .footer-final {
@@ -428,7 +541,7 @@
         <section class="features">
             <div class="container">
         <div class="section-header">
-            <h2 class="section-header-title">why choose us</h2>
+            <h2 class="section-header-title" id="features-title">why choose us</h2>
             <p class="section-header-text">Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics</p>
         </div>
         <div class="grid-cards">
@@ -476,6 +589,130 @@
             </div>
         </div>
     </div>
+        </section>
+
+        <section class="video">
+            <div class="container">
+                <div class="section-header" id="clients-header">
+                    <h2 class="section-header-title">We are providing best business service.</h2>
+                    <p class="section-header-text">Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics </p>
+                </div>
+                <div class="content-video">
+                    <video class="video" controls poster="img/cover-video.jpg">
+                        <source src="https://media.geeksforgeeks.org/wp-content/uploads/20200409094356/Placement100-_-GeeksforGeeks2.mp4" type="video/mp4">
+                    This video is not supported by your browser.
+                    </video>
+                    <div class="playpause"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="clients">
+            <div class="container">
+                <div class="section-header" id="clients-header">
+                    <h2 class="section-header-title">What Clients Say</h2>
+                    <p class="section-header-text">Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics </p>
+                </div>
+                        <div class="grid-cards">
+                            <div class="card">
+                            <div class="clients-card-header">
+                                <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                <img class="clients-card-icon" src="img/icons/star_empty.svg" alt="empty star icon">
+                            </div>
+                            <p class="card-content">Slate helps you see how many more days you need to work to reach your financial goal.</p>
+                            <div class="card-footer">
+                                <img class="card-photo-icon" src="img/icons/photo_regina.svg" alt="photo icon of regina miles">
+                                <a href="#" class="card-name-link">Regina Miles</a>
+                                <h6 id="ceo">ceo</h6>
+                            </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="clients-card-header">
+                                    <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                    <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                    <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                    <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                    <img class="clients-card-icon" src="img/icons/star_empty.svg" alt="empty star icon">
+                                </div>
+                                <p class="card-content">Slate helps you see how many more days you need to work to reach your financial goal.</p>
+                                <div class="card-footer">
+                                    <img class="card-photo-icon" src="img/icons/photo_ashley.svg" alt="photo icon of ashley fletcher">
+                                    <a href="#" class="card-name-link">Ashley Fletcher</a>
+                                    <h6>Designer</h6>
+                                </div>
+                            </div>
+
+                                <div class="card">
+                                    <div class="clients-card-header">
+                                        <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                        <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                        <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                        <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                        <img class="clients-card-icon" src="img/icons/star_empty.svg" alt="empty star icon">
+                                    </div>
+                                    <p class="card-content">Slate helps you see how many more days you need to work to reach your financial goal.</p>
+                                    <div class="card-footer">
+                                        <img class="card-photo-icon" src="img/icons/photo_avie.svg" alt="photo icon of avie beaton">
+                                        <a href="#" class="card-name-link">Avie Beaton</a>
+                                        <h6>Co-founder</h6>
+                                    </div>
+                                </div>
+                        </div>
+            </div>
+        </section>
+
+        <section class="team">
+            <div class="container">
+                <div class="section-header" id="clients-header">
+                    <h2 class="section-header-title">Meet Our Team</h2>
+                    <p class="section-header-text">Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics </p>
+                </div>
+                <div class="grid-cards">
+                    <div class="card" id="team-card">
+                        <img class="photo-tohide" src="img/coverphoto-regina.png" alt="photo of CEO">
+                        <img class="photo-toshow" src="img/mediaphoto-girl.png" alt="photo of CEO">
+                        <div class="card-body">
+                            <h5>Regina Miles</h5>
+                            <p class="team-card-job" id="ceo">ceo</p>
+                            <div class="team-card-links">
+                                <a href="#"><img src="img/icons/facebook-blue.svg" alt="facebook link"></a>
+                                <a href="#"><img src="img/icons/instagram-blue.svg" alt="instagram link"></a>
+                                <a href="#"><img src="img/icons/twitter-blue.svg" alt="twitter link"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" id="team-card">
+                        <img class="photo-tohide" src="img/coverphoto-regina.png" alt="photo of Consultant">
+                        <img class="photo-toshow" src="img/mediaphoto-guy.png" alt="photo of CEO">
+                        <div class="card-body">
+                            <h5>Rodney Stratton</h5>
+                            <p class="team-card-job">Consultant</p>
+                            <div class="team-card-links">
+                                <a href="#"><img src="img/icons/facebook-blue.svg" alt="facebook link"></a>
+                                <a href="#"><img src="img/icons/instagram-blue.svg" alt="instagram link"></a>
+                                <a href="#"><img src="img/icons/twitter-blue.svg" alt="twitter link"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" id="team-card">
+                        <img class="photo-tohide" src="img/coverphoto-avie.png" alt="photo of Co-Founder">
+                        <img class="photo-toshow" src="img/mediaphoto-girl.png" alt="photo of CEO">
+                        <div class="card-body">
+                            <h5>Avie Beaton</h5>
+                            <p class="team-card-job">Co-Founder</p>
+                            <div class="team-card-links">
+                                <a href="#"><img src="img/icons/facebook-blue.svg" alt="facebook link"></a>
+                                <a href="#"><img src="img/icons/instagram-blue.svg" alt="instagram link"></a>
+                                <a href="#"><img src="img/icons/twitter-blue.svg" alt="twitter link"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <footer class="footer">
