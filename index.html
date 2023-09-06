@@ -388,7 +388,16 @@
             margin: auto;
             background-position: center;
             cursor: pointer;
-        }       
+        }   
+        @media screen and (min-width: 320px) and (max-width: 768px) {
+            .content-video {
+                display: flex;
+                flex-direction: column;
+                padding-left: 140px;
+                justify-content: center;
+            }
+
+        }    
         .footer {
             background-color: var(--darkblue);
         }
