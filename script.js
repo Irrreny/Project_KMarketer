@@ -1,6 +1,10 @@
 let country = `United Kingdom`;
+console.log(country);
 let continent = `Europe`;
+console.log(continent);
 let population = 68;
+console.log(population);
 let isIsland = true;
+console.log(isIsland);
 let countryDescription = `The ${country} is located in ${continent}, ${population} million people live there.`;
 console.log(countryDescription);
