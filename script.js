@@ -22,13 +22,13 @@ console.log(sarahBMI);
 if (sarahBMI < 18.5) { 
         console.log(`Sarah is underweight.`)
 }
-if ( sarahBMI >= 18.5 && sarahBMI <= 25); {
+else if ( sarahBMI >= 18.5 && sarahBMI <= 25); {
     console.log(`Sarah's weight is normal.`)
 }
 
 let bobBMI = weightBob / heightBob ** 2;
 console.log(bobBMI);
-if (bobBMI > 18.5 || bobBMI < 25) {
+if (bobBMI < 18.5 || bobBMI > 25) {
     console.log(`Bob is underweight or overweight.`)
 }
 else {
