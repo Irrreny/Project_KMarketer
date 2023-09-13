@@ -149,8 +149,14 @@ figures.push(12)
 console.log(figures)
 
 const months = [`January`, `February`, `March`, `April`, `May`, `June`, `July`, `August`, `September`, `October`, `November`, `December`]
+console.log(months.slice(6, -1))
+const monthsLastTask = months.filter((word) => word.length > 5)
+console.log(monthsLastTask)
+console.log(monthsLastTask.join(`-`))
+
 months.sort()
 console.log(months)
 
 const result = months.filter((word) => word.length > 3)
 console.log(result)
+
