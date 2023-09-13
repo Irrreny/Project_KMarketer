@@ -137,3 +137,8 @@ const colors = [`red`, `green`, `blue`, `yellow`]
 console.log(colors)
 console.log(colors.indexOf(`green`))
 console.log(colors.includes(`orange`))
+
+const names = [`John`, `Jane`, `Mike`, `Jennifer`]
+names.unshift(`David`)
+console.log(names.indexOf(`Mike`))
+console.log(names)
