@@ -35,7 +35,7 @@ else {
     console.log(`Bob's weight is normal.`)
 }*/
 
-//Home Work 3//
+/*Home Work 3
 
 let number = 8;
 console.log(number % 2 ? `odd` : `even`)
@@ -117,4 +117,11 @@ console.log(`You will need ${result} kg of food to survive till you're ${maxYear
 }
 calculationSupply (35, 1, 90)
 calculationSupply (25, 2, 80)
-calculationSupply (30, 1.5)
+calculationSupply (30, 1.5) */
+
+//Home Work 4//
+
+const fruits = []
+fruits.push(`apple`, `banana`, `orange`)
+console.log(fruits.length)
+console.log(fruits)
