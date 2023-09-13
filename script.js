@@ -151,3 +151,6 @@ console.log(figures)
 const months = [`January`, `February`, `March`, `April`, `May`, `June`, `July`, `August`, `September`, `October`, `November`, `December`]
 months.sort()
 console.log(months)
+
+const result = months.filter((word) => word.length > 3)
+console.log(result)
