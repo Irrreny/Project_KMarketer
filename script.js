@@ -77,19 +77,19 @@ switch (true) {
     case grade >=97 && grade <=100 : 
         console.log(`Congrats, you have an A+`)
         break
-    case grade >=90 && grade <=96 : 
+    case grade >=90 : 
         console.log(`You have an A`)
         break
-    case grade >=80 && grade <=89 : 
+    case grade >=80 : 
         console.log(`You have a B`)
         break
-    case grade >=70 && grade <=79 : 
+    case grade >=70 : 
         console.log(`You have a C`)
         break
-    case grade >=60 && grade <=69 : 
+    case grade >=60 : 
         console.log(`You have a D`)
         break
-    case grade >=20 && grade <=59 : 
+    case grade >=20 : 
         console.log(`You Failed the exam`)
         break
     default:
