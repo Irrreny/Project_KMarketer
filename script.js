@@ -125,3 +125,10 @@ const fruits = []
 fruits.push(`apple`, `banana`, `orange`)
 console.log(fruits.length)
 console.log(fruits)
+
+const numbers = [1, 2, 3, 4, 5]
+console.log(numbers)
+numbers.pop()
+console.log(numbers)
+numbers.shift ()
+console.log(numbers)
