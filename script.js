@@ -142,3 +142,12 @@ const names = [`John`, `Jane`, `Mike`, `Jennifer`]
 names.unshift(`David`)
 console.log(names.indexOf(`Mike`))
 console.log(names)
+
+const figures = [2, 4, 6, 8, 10]
+console.log(figures.includes(5))
+figures.push(12)
+console.log(figures)
+
+const months = [`January`, `February`, `March`, `April`, `May`, `June`, `July`, `August`, `September`, `October`, `November`, `December`]
+months.sort()
+console.log(months)
