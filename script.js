@@ -132,3 +132,8 @@ numbers.pop()
 console.log(numbers)
 numbers.shift ()
 console.log(numbers)
+
+const colors = [`red`, `green`, `blue`, `yellow`]
+console.log(colors)
+console.log(colors.indexOf(`green`))
+console.log(colors.includes(`orange`))
