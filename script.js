@@ -119,7 +119,7 @@ calculationSupply (35, 1, 90)
 calculationSupply (25, 2, 80)
 calculationSupply (30, 1.5) */
 
-//Home Work 4//
+/*Home Work 4
 
 const fruits = []
 fruits.push(`apple`, `banana`, `orange`)
@@ -158,5 +158,127 @@ months.sort()
 console.log(months)
 
 const result = months.filter((word) => word.length > 3)
-console.log(result)
+console.log(result) */
 
+//Home Work 5//
+//----------1----------//
+const fruits = [`apple`, `banana`, `orange`]
+for (let i = 0; i <= 2; i++) {
+    console.log(fruits[i])
+}
+//----------2----------//
+
+const numbers = [1, 2, 3, 4, 5]
+let sum = 0
+for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i]
+}
+console.log(sum)
+
+//----------3----------//
+
+const names = [`John`, `Jane`, `Mikhael`, `Jennifer`, `Bobby`]
+let nameLength = []
+for (let i = 0; i < names.length; i++) {
+    nameLength.push(names[i].length);
+}
+console.log(nameLength);
+
+//----------4----------//
+
+const departments = [
+[`Legal`, `John`, `Laura`, `Martin`],
+[`Finance`, `Elisa`, `Guy`, `Alice`],
+[`IT`, `Dave`, `Jason`, `Irene`],
+[`Sales`, `Silvia`, `Jack`, `Nicole`]
+]
+console.log(departments)
+for (var i = 0; i < departments.length; i++) {
+    for (var j = 1; j < departments[i].length; j++) {
+      console.log(departments[i][j]);
+    }
+  }
+  let employeeNames = []
+    for (let i = 0; i < departments.length; i++) {
+        for (let j = 1; j < departments[i].length; j++)
+        employeeNames.push(departments[i][j]);
+    }
+    employeeNames.sort ();
+    console.log(employeeNames);
+
+    //----------5----------//
+
+const person = {
+    firstName: `John`,
+    lastName: `Doe`,
+    age: 30,
+    profession: `Developer`
+}
+function countProperties (person) {
+    let properties = Object.keys(person);
+    return properties.length;
+}
+let numberProperties = countProperties(person);
+console.log(numberProperties);
+
+//----------6----------//
+
+const numbersN = [];
+for (let i = 1; i <= 5; i++) {
+    numbersN.push(i);
+};
+console.log(numbersN);
+
+//----------7----------//
+
+const numbersBiggest = [5, 8, 2, 10, 3]
+
+  function largestElement(numbers) {
+    let theBiggestNumber = numbers[0];
+    for (let i = 1; i < numbers.length; i++) {
+        if (numbers[i] > theBiggestNumber) {
+            theBiggestNumber = numbers[i];
+        }
+    }
+    return theBiggestNumber;
+}
+  
+const result = largestElement(numbersBiggest);
+
+console.log(result);
+
+//----------8----------//
+
+const subjects = { 
+    math: 8, 
+    literature: 7, 
+    history: 9,
+    english: 10
+}
+const grades = Object.values(subjects);
+console.log(grades)
+
+    let summ = 0; 
+    for (let i = 0; i < grades.length; i++) {
+        summ += grades[i]
+    }
+    let average = summ / grades.length
+
+console.log(average)
+
+//----------9----------//
+
+const dog = new Object();
+dog.name = `Java`;
+dog.age = 2;
+dog.color = `black`;
+  
+  function addPuppies(dog, numberPuppies) {
+      dog.puppies = [];
+      for (let i = 1; i <= numberPuppies; i++){
+          dog.puppies.push(`"Puppie_${i}"`);
+      }
+  }
+  
+  addPuppies(dog, 5);
+  console.log(dog);
