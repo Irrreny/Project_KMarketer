@@ -330,3 +330,79 @@ function combineValues(greet) {
 
    //--------4--------//
 
+let text = (`Hello world, my name is Albert`);
+
+function vowels(text) {
+    let sentence = text.split(``)
+    let vowelsList = [`A`, `E`, `I`, `O`, `U`, `Y`, `a`, `e`, `i`, `o`, `u`, `y`];
+    let vowelsCount = 0;
+    let i = 0;
+    while (i < sentence.length) {
+        i++
+        if(vowelsList.indexOf(sentence[i]) !== -1) {
+        vowelsCount +=1;
+        }
+    }
+    return vowelsCount
+} 
+console.log(vowels(text))
+
+//--------5--------//
+
+let grades = {John: [8, 7, 9], Mary: [9, 9, 10], Alex: [6, 8, 7]}
+let resultGrades = Object.assign({}, grades);
+
+const averageCount = (grades) => {
+    for (element in grades) {
+        let gradeValue = grades[element];
+        let i = 0;
+        let sum = 0;
+        let arrayLength = gradeValue.length;
+
+        while (i < arrayLength) {
+            sum += gradeValue[i];
+            i++;
+        }
+        let medium = sum / arrayLength;
+        resultGrades[element] = `medium: ${medium}`;
+    }
+    return resultGrades
+}
+console.log(averageCount(grades))
+
+//--------6--------//
+
+let greeting = `Hello, World!`
+const reversedGreeting = (greeting) => {
+    const greetingArray = greeting.split(``)
+
+    let resultGreeting = []
+    let i = greetingArray.length -1
+    do {
+        resultGreeting.push(greetingArray[i])
+        i--;
+    }
+    while (i >= 0);
+    let reversedWords = resultGreeting.join(``)
+return reversedWords
+}
+console.log(reversedGreeting(greeting))
+
+//--------7--------//
+
+let word = `level`
+
+const palindrom = (word) => {
+    let wordArray = word.split(``)
+    let reversedWord = wordArray.reverse(``)
+    let joinReversedWord = reversedWord.join(``)
+    let i = 0;
+    while (i < joinReversedWord.length) {
+        if (word !== joinReversedWord) {
+            return false
+        }
+    i++;
+    }
+    return true
+} 
+console.log(palindrom(word))
