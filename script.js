@@ -160,7 +160,7 @@ console.log(months)
 const result = months.filter((word) => word.length > 3)
 console.log(result) */
 
-//Home Work 5//
+/*Home Work 5
 //----------1----------//
 const fruits = [`apple`, `banana`, `orange`]
 for (let i = 0; i <= 2; i++) {
@@ -281,4 +281,52 @@ dog.color = `black`;
   }
   
   addPuppies(dog, 5);
-  console.log(dog);
+  console.log(dog);*/
+
+//Home Work 6//
+
+//--------1--------//
+
+const person = {
+    name: `John`,
+    age: 30,
+    city: `New-York`
+}
+Object.getOwnPropertyNames(person).forEach((val, idx, array) => {
+    console.log(`${val} : ${person[val]}`);
+})
+//--------2--------//
+
+for(let key in person) {
+    if(person[key] === 'John');
+    (person[key] === 30);
+    (person[key] === 'New-York')
+    {
+      console.log(true);
+    }
+  }
+ 
+  //--------3--------//
+
+const greet = {
+    prop1: `Hello`,
+    prop2: `World`,
+    prop3: `!`
+}
+function combineValues(greet) {
+    let combinedValue = ``;
+    let keys = Object.keys(greet);
+    let i = 0;
+   
+    do {
+       combinedValue += greet[keys[i]];
+       i++;
+    } while (i < keys.length);
+   
+    return combinedValue;
+    
+   }
+   console.log(combineValues(greet))
+
+   //--------4--------//
+
