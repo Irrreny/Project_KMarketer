@@ -350,7 +350,11 @@ console.log(vowels(textLower))
 
 //--------5--------//
 
-let grades = {John: [8, 7, 9], Mary: [9, 9, 10], Alex: [6, 8, 7]}
+let grades = {
+    John: [8, 7, 9], 
+    Mary: [9, 9, 10], 
+    Alex: [6, 8, 7]
+}
 let resultGrades = Object.assign({}, grades);
 
 const averageCount = (grades) => {
@@ -439,5 +443,30 @@ const studentGrades = [
   .map(product => product.name)
   console.log(items)
   
-  /*const items = products.map(item => item.name)
-  console.log(items)*/
+ //--------3--------//
+
+ const figures = [10, 5, 8, 15, 3, 20] 
+ const maxDigit = figures.reduce(function (largest, digit){
+    return (largest > digit) ? largest : digit
+ }
+ )
+ console.log(maxDigit)
+
+ //--------4--------//
+
+ const studentEvaluation = [
+    {John: [8, 7, 9]}, 
+    {Mary: [9, 9, 10]}, 
+    {Alex: [6, 8, 7]}
+];
+const averageEvaluation = studentEvaluation.reduce((acc,student) => {
+    let key = Object.keys(student)[0];
+    let value = student[key];
+    
+    let total = value.reduce((acc, score) => acc + score, 0);
+    
+    acc[key] = total / value.length;
+    return acc;
+},{});
+
+console.log(averageEvaluation);
