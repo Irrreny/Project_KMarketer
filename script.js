@@ -331,10 +331,11 @@ function combineValues(greet) {
    //--------4--------//
 
 let text = (`Hello world, my name is Albert`);
+let textLower = text.toLowerCase()
 
-function vowels(text) {
-    let sentence = text.split(``)
-    let vowelsList = [`A`, `E`, `I`, `O`, `U`, `Y`, `a`, `e`, `i`, `o`, `u`, `y`];
+function vowels(textLower) {
+    let sentence = textLower.split(``)
+    let vowelsList = [`a`, `e`, `i`, `o`, `u`, `y`];
     let vowelsCount = 0;
     let i = 0;
     while (i < sentence.length) {
@@ -345,7 +346,7 @@ function vowels(text) {
     }
     return vowelsCount
 } 
-console.log(vowels(text))
+console.log(vowels(textLower))
 
 //--------5--------//
 
@@ -392,13 +393,12 @@ console.log(reversedGreeting(greeting))
 
 let word = `level`
 
+
 const palindrom = (word) => {
-    let wordArray = word.split(``)
-    let reversedWord = wordArray.reverse(``)
-    let joinReversedWord = reversedWord.join(``)
+    let wordArray = word.split(``).reverse().join(``)
     let i = 0;
-    while (i < joinReversedWord.length) {
-        if (word !== joinReversedWord) {
+    while (i < wordArray.length) {
+        if (word !== wordArray) {
             return false
         }
     i++;
@@ -406,3 +406,38 @@ const palindrom = (word) => {
     return true
 } 
 console.log(palindrom(word))
+
+
+//Home Work 7//
+//--------1--------//
+
+const studentGrades = [
+    { name: "Anna", note: 9 },
+    { name: "Denis", note: 7 },
+    { name: "Cristian", note: 8 },
+    { name: "Daniel", note: 6 },
+    { name: "Elena", note: 10 }
+  ]
+  const average = studentGrades.reduce(function (sum, grade) {
+    return sum + grade.note / studentGrades.length
+  },
+  0)
+  console.log(average)
+
+  //--------2--------//
+
+  const products = [
+    {name: "Tshirt", price: 50, isAvailable: true },
+    {name: "Pants", price: 80, isAvailable: false },
+    {name: "Jacket", price: 120, isAvailable: true },
+    {name: "Shirt", price: 60, isAvailable: true },
+    {name: "Skirt", price: 40, isAvailable: false }
+  ]
+
+  const items = products
+  .filter(item => item.isAvailable)
+  .map(product => product.name)
+  console.log(items)
+  
+  /*const items = products.map(item => item.name)
+  console.log(items)*/
