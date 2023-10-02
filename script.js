@@ -460,13 +460,21 @@ const studentGrades = [
     {Alex: [6, 8, 7]}
 ];
 const averageEvaluation = studentEvaluation.reduce((acc,student) => {
-    let key = Object.keys(student)[0];
-    let value = student[key];
-    
-    let total = value.reduce((acc, score) => acc + score, 0);
-    
-    acc[key] = total / value.length;
+
+    acc[Object.keys(student)[0]] = student[Object.keys(student)[0]].reduce((acc, score) => acc + score, 0) / student[Object.keys(student)[0]].length;
+
     return acc;
 },{});
 
 console.log(averageEvaluation);
+
+
+/*const averageEvaluation = studentEvaluation.reduce((acc,student) => {
+    let key = Object.keys(student)[0];
+    let value = student[key];
+    let total = value.reduce((acc, score) => acc + score, 0);
+    acc[key] = total / value.length;
+    return acc;
+},{});
+console.log(averageEvaluation);*/
+
