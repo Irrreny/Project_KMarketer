@@ -119,7 +119,7 @@ calculationSupply (35, 1, 90)
 calculationSupply (25, 2, 80)
 calculationSupply (30, 1.5) */
 
-//Home Work 4//
+/*Home Work 4
 
 const fruits = []
 fruits.push(`apple`, `banana`, `orange`)
@@ -158,5 +158,315 @@ months.sort()
 console.log(months)
 
 const result = months.filter((word) => word.length > 3)
-console.log(result)
+console.log(result) */
 
+/*Home Work 5
+//----------1----------//
+const fruits = [`apple`, `banana`, `orange`]
+for (let i = 0; i <= 2; i++) {
+    console.log(fruits[i])
+}
+//----------2----------//
+
+const numbers = [1, 2, 3, 4, 5]
+let sum = 0
+for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i]
+}
+console.log(sum)
+
+//----------3----------//
+
+const names = [`John`, `Jane`, `Mikhael`, `Jennifer`, `Bobby`]
+let nameLength = []
+for (let i = 0; i < names.length; i++) {
+    nameLength.push(names[i].length);
+}
+console.log(nameLength);
+
+//----------4----------//
+
+const departments = [
+[`Legal`, `John`, `Laura`, `Martin`],
+[`Finance`, `Elisa`, `Guy`, `Alice`],
+[`IT`, `Dave`, `Jason`, `Irene`],
+[`Sales`, `Silvia`, `Jack`, `Nicole`]
+]
+console.log(departments)
+for (var i = 0; i < departments.length; i++) {
+    for (var j = 1; j < departments[i].length; j++) {
+      console.log(departments[i][j]);
+    }
+  }
+  let employeeNames = []
+    for (let i = 0; i < departments.length; i++) {
+        for (let j = 1; j < departments[i].length; j++)
+        employeeNames.push(departments[i][j]);
+    }
+    employeeNames.sort ();
+    console.log(employeeNames);
+
+    //----------5----------//
+
+const person = {
+    firstName: `John`,
+    lastName: `Doe`,
+    age: 30,
+    profession: `Developer`
+}
+function countProperties (person) {
+    let properties = Object.keys(person);
+    return properties.length;
+}
+let numberProperties = countProperties(person);
+console.log(numberProperties);
+
+//----------6----------//
+
+const numbersN = [];
+for (let i = 1; i <= 5; i++) {
+    numbersN.push(i);
+};
+console.log(numbersN);
+
+//----------7----------//
+
+const numbersBiggest = [5, 8, 2, 10, 3]
+
+  function largestElement(numbers) {
+    let theBiggestNumber = numbers[0];
+    for (let i = 1; i < numbers.length; i++) {
+        if (numbers[i] > theBiggestNumber) {
+            theBiggestNumber = numbers[i];
+        }
+    }
+    return theBiggestNumber;
+}
+  
+const result = largestElement(numbersBiggest);
+
+console.log(result);
+
+//----------8----------//
+
+const subjects = { 
+    math: 8, 
+    literature: 7, 
+    history: 9,
+    english: 10
+}
+const grades = Object.values(subjects);
+console.log(grades)
+
+    let summ = 0; 
+    for (let i = 0; i < grades.length; i++) {
+        summ += grades[i]
+    }
+    let average = summ / grades.length
+
+console.log(average)
+
+//----------9----------//
+
+const dog = new Object();
+dog.name = `Java`;
+dog.age = 2;
+dog.color = `black`;
+  
+  function addPuppies(dog, numberPuppies) {
+      dog.puppies = [];
+      for (let i = 1; i <= numberPuppies; i++){
+          dog.puppies.push(`"Puppie_${i}"`);
+      }
+  }
+  
+  addPuppies(dog, 5);
+  console.log(dog);*/
+
+//Home Work 6//
+
+//--------1--------//
+
+const person = {
+    name: `John`,
+    age: 30,
+    city: `New-York`
+}
+Object.getOwnPropertyNames(person).forEach((val, idx, array) => {
+    console.log(`${val} : ${person[val]}`);
+})
+//--------2--------//
+
+for(let key in person) {
+    if(person[key] === 'John');
+    (person[key] === 30);
+    (person[key] === 'New-York')
+    {
+      console.log(true);
+    }
+  }
+ 
+  //--------3--------//
+
+const greet = {
+    prop1: `Hello`,
+    prop2: `World`,
+    prop3: `!`
+}
+function combineValues(greet) {
+    let combinedValue = ``;
+    let keys = Object.keys(greet);
+    let i = 0;
+   
+    do {
+       combinedValue += greet[keys[i]];
+       i++;
+    } while (i < keys.length);
+   
+    return combinedValue;
+    
+   }
+   console.log(combineValues(greet))
+
+   //--------4--------//
+
+let text = (`Hello world, my name is Albert`);
+let textLower = text.toLowerCase()
+
+function vowels(textLower) {
+    let sentence = textLower.split(``)
+    let vowelsList = [`a`, `e`, `i`, `o`, `u`, `y`];
+    let vowelsCount = 0;
+    let i = 0;
+    while (i < sentence.length) {
+        i++
+        if(vowelsList.indexOf(sentence[i]) !== -1) {
+        vowelsCount +=1;
+        }
+    }
+    return vowelsCount
+} 
+console.log(vowels(textLower))
+
+//--------5--------//
+
+let grades = {
+    John: [8, 7, 9], 
+    Mary: [9, 9, 10], 
+    Alex: [6, 8, 7]
+}
+let resultGrades = Object.assign({}, grades);
+
+const averageCount = (grades) => {
+    for (element in grades) {
+        let gradeValue = grades[element];
+        let i = 0;
+        let sum = 0;
+        let arrayLength = gradeValue.length;
+
+        while (i < arrayLength) {
+            sum += gradeValue[i];
+            i++;
+        }
+        let medium = sum / arrayLength;
+        resultGrades[element] = `medium: ${medium}`;
+    }
+    return resultGrades
+}
+console.log(averageCount(grades))
+
+//--------6--------//
+
+let greeting = `Hello, World!`
+const reversedGreeting = (greeting) => {
+    const greetingArray = greeting.split(``)
+
+    let resultGreeting = []
+    let i = greetingArray.length -1
+    do {
+        resultGreeting.push(greetingArray[i])
+        i--;
+    }
+    while (i >= 0);
+    let reversedWords = resultGreeting.join(``)
+return reversedWords
+}
+console.log(reversedGreeting(greeting))
+
+//--------7--------//
+
+let word = `level`
+
+
+const palindrom = (word) => {
+    let wordArray = word.split(``).reverse().join(``)
+    let i = 0;
+    while (i < wordArray.length) {
+        if (word !== wordArray) {
+            return false
+        }
+    i++;
+    }
+    return true
+} 
+console.log(palindrom(word))
+
+
+//Home Work 7//
+//--------1--------//
+
+const studentGrades = [
+    { name: "Anna", note: 9 },
+    { name: "Denis", note: 7 },
+    { name: "Cristian", note: 8 },
+    { name: "Daniel", note: 6 },
+    { name: "Elena", note: 10 }
+  ]
+  const average = studentGrades.reduce(function (sum, grade) {
+    return sum + grade.note / studentGrades.length
+  },
+  0)
+  console.log(average)
+
+  //--------2--------//
+
+  const products = [
+    {name: "Tshirt", price: 50, isAvailable: true },
+    {name: "Pants", price: 80, isAvailable: false },
+    {name: "Jacket", price: 120, isAvailable: true },
+    {name: "Shirt", price: 60, isAvailable: true },
+    {name: "Skirt", price: 40, isAvailable: false }
+  ]
+
+  const items = products
+  .filter(item => item.isAvailable)
+  .map(product => product.name)
+  console.log(items)
+  
+ //--------3--------//
+
+ const figures = [10, 5, 8, 15, 3, 20] 
+ const maxDigit = figures.reduce(function (largest, digit){
+    return (largest > digit) ? largest : digit
+ }
+ )
+ console.log(maxDigit)
+
+ //--------4--------//
+
+ const studentEvaluation = [
+    {John: [8, 7, 9]}, 
+    {Mary: [9, 9, 10]}, 
+    {Alex: [6, 8, 7]}
+];
+const averageEvaluation = studentEvaluation.reduce((acc,student) => {
+    let key = Object.keys(student)[0];
+    let value = student[key];
+    
+    let total = value.reduce((acc, score) => acc + score, 0);
+    
+    acc[key] = total / value.length;
+    return acc;
+},{});
+
+console.log(averageEvaluation);
