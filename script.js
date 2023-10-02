@@ -160,7 +160,7 @@ console.log(months)
 const result = months.filter((word) => word.length > 3)
 console.log(result) */
 
-//Home Work 5//
+/*Home Work 5
 //----------1----------//
 const fruits = [`apple`, `banana`, `orange`]
 for (let i = 0; i <= 2; i++) {
@@ -281,4 +281,192 @@ dog.color = `black`;
   }
   
   addPuppies(dog, 5);
-  console.log(dog);
+  console.log(dog);*/
+
+//Home Work 6//
+
+//--------1--------//
+
+const person = {
+    name: `John`,
+    age: 30,
+    city: `New-York`
+}
+Object.getOwnPropertyNames(person).forEach((val, idx, array) => {
+    console.log(`${val} : ${person[val]}`);
+})
+//--------2--------//
+
+for(let key in person) {
+    if(person[key] === 'John');
+    (person[key] === 30);
+    (person[key] === 'New-York')
+    {
+      console.log(true);
+    }
+  }
+ 
+  //--------3--------//
+
+const greet = {
+    prop1: `Hello`,
+    prop2: `World`,
+    prop3: `!`
+}
+function combineValues(greet) {
+    let combinedValue = ``;
+    let keys = Object.keys(greet);
+    let i = 0;
+   
+    do {
+       combinedValue += greet[keys[i]];
+       i++;
+    } while (i < keys.length);
+   
+    return combinedValue;
+    
+   }
+   console.log(combineValues(greet))
+
+   //--------4--------//
+
+let text = (`Hello world, my name is Albert`);
+let textLower = text.toLowerCase()
+
+function vowels(textLower) {
+    let sentence = textLower.split(``)
+    let vowelsList = [`a`, `e`, `i`, `o`, `u`, `y`];
+    let vowelsCount = 0;
+    let i = 0;
+    while (i < sentence.length) {
+        i++
+        if(vowelsList.indexOf(sentence[i]) !== -1) {
+        vowelsCount +=1;
+        }
+    }
+    return vowelsCount
+} 
+console.log(vowels(textLower))
+
+//--------5--------//
+
+let grades = {
+    John: [8, 7, 9], 
+    Mary: [9, 9, 10], 
+    Alex: [6, 8, 7]
+}
+let resultGrades = Object.assign({}, grades);
+
+const averageCount = (grades) => {
+    for (element in grades) {
+        let gradeValue = grades[element];
+        let i = 0;
+        let sum = 0;
+        let arrayLength = gradeValue.length;
+
+        while (i < arrayLength) {
+            sum += gradeValue[i];
+            i++;
+        }
+        let medium = sum / arrayLength;
+        resultGrades[element] = `medium: ${medium}`;
+    }
+    return resultGrades
+}
+console.log(averageCount(grades))
+
+//--------6--------//
+
+let greeting = `Hello, World!`
+const reversedGreeting = (greeting) => {
+    const greetingArray = greeting.split(``)
+
+    let resultGreeting = []
+    let i = greetingArray.length -1
+    do {
+        resultGreeting.push(greetingArray[i])
+        i--;
+    }
+    while (i >= 0);
+    let reversedWords = resultGreeting.join(``)
+return reversedWords
+}
+console.log(reversedGreeting(greeting))
+
+//--------7--------//
+
+let word = `level`
+
+
+const palindrom = (word) => {
+    let wordArray = word.split(``).reverse().join(``)
+    let i = 0;
+    while (i < wordArray.length) {
+        if (word !== wordArray) {
+            return false
+        }
+    i++;
+    }
+    return true
+} 
+console.log(palindrom(word))
+
+
+//Home Work 7//
+//--------1--------//
+
+const studentGrades = [
+    { name: "Anna", note: 9 },
+    { name: "Denis", note: 7 },
+    { name: "Cristian", note: 8 },
+    { name: "Daniel", note: 6 },
+    { name: "Elena", note: 10 }
+  ]
+  const average = studentGrades.reduce(function (sum, grade) {
+    return sum + grade.note / studentGrades.length
+  },
+  0)
+  console.log(average)
+
+  //--------2--------//
+
+  const products = [
+    {name: "Tshirt", price: 50, isAvailable: true },
+    {name: "Pants", price: 80, isAvailable: false },
+    {name: "Jacket", price: 120, isAvailable: true },
+    {name: "Shirt", price: 60, isAvailable: true },
+    {name: "Skirt", price: 40, isAvailable: false }
+  ]
+
+  const items = products
+  .filter(item => item.isAvailable)
+  .map(product => product.name)
+  console.log(items)
+  
+ //--------3--------//
+
+ const figures = [10, 5, 8, 15, 3, 20] 
+ const maxDigit = figures.reduce(function (largest, digit){
+    return (largest > digit) ? largest : digit
+ }
+ )
+ console.log(maxDigit)
+
+ //--------4--------//
+
+ const studentEvaluation = [
+    {John: [8, 7, 9]}, 
+    {Mary: [9, 9, 10]}, 
+    {Alex: [6, 8, 7]}
+];
+const averageEvaluation = studentEvaluation.reduce((acc,student) => {
+    let key = Object.keys(student)[0];
+    let value = student[key];
+    
+    let total = value.reduce((acc, score) => acc + score, 0);
+    
+    acc[key] = total / value.length;
+    return acc;
+},{});
+
+console.log(averageEvaluation);
