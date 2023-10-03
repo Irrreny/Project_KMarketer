@@ -534,20 +534,28 @@ let wordThree = `Success`
 let wordFour = `(( @`
 
 function replacingLetters(word) {
-    const letterCount = word.toLowerCase()
-    let newLetter = {}
-    for (const letter of letterCount) {
-        newLetter[letter] = (newLetter[letter] || 0) + 1
+    const lowercaseWord = word.toLowerCase()
+    let letterCount = {}
+    for (const letter of lowercaseWord) {
+        if (letterCount[letter]) {
+            letterCount[letter] += 1
+        } else {
+            letterCount[letter] = 1
+        }
     }
-    let result = ``
-    if (newLetter[letter] === newLetter[letter]) {
-        result += `(`
+    let newLetter = ``
+    for (const letter of lowercaseWord) {
+        if (letterCount[letter] > 1) {
+            newLetter += `)`
+        } else {
+            newLetter += `(`
+        }
     }
-    else 
-    result += `)`
-return result 
+    return newLetter
 }
-
+console.log(replacingLetters(wordOne))
+console.log(replacingLetters(wordTwo))
+console.log(replacingLetters(wordThree))
 console.log(replacingLetters(wordFour))
 
 //--------7--------//
