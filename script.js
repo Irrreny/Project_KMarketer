@@ -283,8 +283,7 @@ dog.color = `black`;
   addPuppies(dog, 5);
   console.log(dog);*/
 
-//Home Work 6//
-
+/*Home Work 6//
 //--------1--------//
 
 const person = {
@@ -396,8 +395,6 @@ console.log(reversedGreeting(greeting))
 //--------7--------//
 
 let word = `level`
-
-
 const palindrom = (word) => {
     let wordArray = word.split(``).reverse().join(``)
     let i = 0;
@@ -409,12 +406,10 @@ const palindrom = (word) => {
     }
     return true
 } 
-console.log(palindrom(word))
+console.log(palindrom(word))*/
 
-
-//Home Work 7//
+/*Home Work 7//
 //--------1--------//
-
 const studentGrades = [
     { name: "Anna", note: 9 },
     { name: "Denis", note: 7 },
@@ -469,4 +464,109 @@ const averageEvaluation = studentEvaluation.reduce((acc,student) => {
     return acc;
 },{});
 
-console.log(averageEvaluation);
+console.log(averageEvaluation);*/
+
+//Home Work 8//
+//--------1--------//
+
+let student = {
+name: `John`,
+lastName: `Doe`,
+faculty: `history`,
+year: 3
+}
+
+const studentInfo = ({name, lastName, faculty, year}) => {
+    let fullName = `${name} ${lastName}`
+    return [fullName, faculty, year]
+}
+console.log(studentInfo(student))
+
+//--------2--------//
+
+let colors = [`red`, `green`, `blue`, `violet`]
+
+const twoColors = ([first, , third]) => {
+    return [first, third]
+}
+let [firstColor, thirdColor] = twoColors(colors)
+console.log(firstColor)
+console.log(thirdColor)
+
+//--------3--------//
+
+let infinity = [28, 10, 88, 22, 4, 9, 1, 4, 3, 7, 12587]
+function unlimitedNumbers(...rest) {
+    return rest
+}
+console.log(unlimitedNumbers(infinity))
+
+//--------4--------//
+
+let days = [`monday`, `tuesday`]
+let months = [`september`, `october`]
+function arrayConcat(arrayOne, arrayTwo) {
+    return [...arrayOne, ...arrayTwo]
+}
+
+console.log(arrayConcat(days, months))
+
+//--------5--------//
+
+let studentJohn = {
+    name: `John`,
+    lastName: `Doe`,
+    faculty: `history`,
+    year: 3,
+}
+let language = {
+    language: `en` }
+
+function specialty(student, lang) {
+    return {...student, ...lang}
+}
+console.log(specialty(studentJohn, language))
+
+//--------6--------//
+let wordOne = `din`
+let wordTwo = `recede`
+let wordThree = `Success`
+let wordFour = `(( @`
+
+function replacingLetters(word) {
+    const lowercaseWord = word.toLowerCase()
+    let letterCount = {}
+    for (const letter of lowercaseWord) {
+        if (letterCount[letter]) {
+            letterCount[letter] += 1
+        } else {
+            letterCount[letter] = 1
+        }
+    }
+    let newLetter = ``
+    for (const letter of lowercaseWord) {
+        if (letterCount[letter] > 1) {
+            newLetter += `)`
+        } else {
+            newLetter += `(`
+        }
+    }
+    return newLetter
+}
+console.log(replacingLetters(wordOne))
+console.log(replacingLetters(wordTwo))
+console.log(replacingLetters(wordThree))
+console.log(replacingLetters(wordFour))
+
+//--------7--------//
+let evenNumbers = [2, 4, 6, 8, 13, 16, 22]
+let oddNumbers = [1, 3, 5, 6, 11, 21, 35]
+
+const findNumber = (num) => {
+const odds = num.filter((n) => n % 2 === 1)
+const evens = num.filter((n) => n % 2 === 0)
+return evens.length === 1 ? evens[0] : odds[0];
+} 
+
+console.log(findNumber(evenNumbers))
+console.log(findNumber(oddNumbers))
