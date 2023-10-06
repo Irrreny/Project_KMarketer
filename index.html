@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-        <script src="script.js"></script>
+        <script src="index.js"></script>
         <style>
             :root {
                 --orange: #FFA62B;
@@ -550,6 +550,12 @@
         .form-footer {
             background-color: white;
         }
+        #resultName, #resultEmail, #resultMessage, #resultSelect {
+            margin: 0;
+            font-family: Montserrat;
+            font-size: 14px;
+            font-weight: 600;
+        }
         .form-appointment {
             display: grid;
             grid-template-columns: auto auto;
@@ -909,9 +915,13 @@
             <div class="container-contact">
                 <h5 class="header-secondary">Contact Us</h5>
                 <h2 class="header-primary">Make an Appointment</h2>
-              <form class="form-appointment">
-                <input type="text" class="form-data" name="fullname" placeholder="Full Name" required>
-                <input type="email" class="form-data" name="email" placeholder="example@gmail.com" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}" required>
+                <p id="resultName"></p>
+                <p id="resultEmail"></p>
+                <p id="resultMessage"></p>
+                <p id="resultSelect"></p>
+              <form class="form-appointment" id="form">
+                <input type="text" id="inputName" class="form-data" name="fullname" placeholder="Full Name">
+                <input type="email" id="inputEmail" class="form-data" name="email" placeholder="example@gmail.com" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}">
                 <select class="form-select" name="date">
                     <option value="">Please Select</option>
                     <option value="mo">Monday</option>
@@ -926,7 +936,7 @@
                     <option value="3pm">3pm</option>
                     <option value="4pm">4pm</option>
                 </select>
-                <textarea class="form-textarea" name="message" rows="5" cols="20" placeholder="Message"></textarea>
+                <textarea id="inputMessage" class="form-textarea" name="message" rows="5" cols="20" placeholder="Message"></textarea>
                 <input class="form-button" type="submit" value="Book Appointment">
               </form>
             </div>
