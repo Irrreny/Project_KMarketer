@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-        <script src="script.js"></script>
+        <script src="index.js"></script>
         <style>
             :root {
                 --orange: #FFA62B;
@@ -550,9 +550,19 @@
         .form-footer {
             background-color: white;
         }
+        #resultName, #resultEmail, #resultMessage, #resultSelect, #resultDate, #resultTime {
+            margin: 0;
+            font-family: Montserrat;
+            font-size: 14px;
+            font-weight: 400;
+            width: 270px;
+        }
+        #resultMessage {
+            width: 500px;
+        }
         .form-appointment {
             display: grid;
-            grid-template-columns: auto auto;
+            grid-template-columns: 1fr 1fr;
             grid-template-rows: repeat(4, auto);
             gap: 20px;
             justify-content: left;
@@ -561,6 +571,10 @@
         .form-textarea {
         grid-column: 1 / span 2;
         }
+        #resultMessage {
+        grid-column: 1 / span 2;
+        }
+        
         .header-secondary {
             font-size: 16px;
             font-weight: 700;
@@ -909,26 +923,35 @@
             <div class="container-contact">
                 <h5 class="header-secondary">Contact Us</h5>
                 <h2 class="header-primary">Make an Appointment</h2>
-              <form class="form-appointment">
-                <input type="text" class="form-data" name="fullname" placeholder="Full Name" required>
-                <input type="email" class="form-data" name="email" placeholder="example@gmail.com" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}" required>
-                <select class="form-select" name="date">
+    
+              <form class="form-appointment" id="form">
+                <input type="text" id="inputName" class="form-data" name="fullname" placeholder="Full Name">
+                
+                <input type="email" id="inputEmail" class="form-data" name="email" placeholder="example@gmail.com" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}">
+                <p id="resultName"></p>
+                <p id="resultEmail"></p>
+                <select id="inputDate" class="form-select" name="date">
                     <option value="">Please Select</option>
                     <option value="mo">Monday</option>
                     <option value="tu">Tuesday</option>
                     <option value="we">Wednesday</option>
                     <option value="th">Thursday</option>
                 </select>
-                <select class="form-select" name="time">
+                
+                <select id="inputTime" class="form-select" name="time">
                     <option value="">4:00 Available</option>
                     <option value="10am">10am</option>
                     <option value="11am">11am</option>
                     <option value="3pm">3pm</option>
                     <option value="4pm">4pm</option>
                 </select>
-                <textarea class="form-textarea" name="message" rows="5" cols="20" placeholder="Message"></textarea>
+                <p id="resultDate"></p>
+                <p id="resultTime"></p>
+                <textarea id="inputMessage" class="form-textarea" name="message" rows="5" cols="20" placeholder="Message"></textarea>
+                <p id="resultMessage"></p>
                 <input class="form-button" type="submit" value="Book Appointment">
               </form>
+              
             </div>
         </section>
         <section class="form-footer">
