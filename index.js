@@ -6,39 +6,56 @@ document.addEventListener(`DOMContentLoaded`, function () {
     const resultMessage = document.getElementById(`resultMessage`)
     const inputEmail = document.getElementById(`inputEmail`)
     const resultEmail = document.getElementById(`resultEmail`)
-    const select = document.getElementsByClassName(`form-select`)
-    const resultSelect = document.getElementById(`resultSelect`)
+    const selectDate = document.getElementById(`inputDate`)
+    const resultDate = document.getElementById(`resultDate`)
+    const selectTime = document.getElementById(`inputTime`)
+    const resultTime = document.getElementById(`resultTime`)
+
     
     form.addEventListener('submit', handleName)
     function handleName(event) {
       event.preventDefault()
 
       const name = inputName.value.trim() 
-      const email = inputEmail.value
-      const message = inputMessage.value.trim()
-
       if (name.length < 2) {
-        resultName.textContent = `❌ The "Name" field cannot be empty and must contain a minimum of 3 characters`
+        resultName.textContent = `❌ Name should contain at least 2 letters`
         resultName.style.color = `red`
       }  else {
         resultName.textContent = `✔️ Hello, ${name}!`
         resultName.style.color = `green`
     }
+
+    const email = inputEmail.value
     if (email === ``) {
         resultEmail.textContent = `❌ Please enter your email`
         resultEmail.style.color = `red`
-    }  if  (message.length < 3) {
+    }  else {
+        resultEmail.textContent = `✔️ Your ${email} was added`
+        resultEmail.style.color = `green`
+    }
+
+    const daySelect = selectDate.value
+    if (daySelect === ``) {
+        resultDate.textContent = `❌ Please select day to book an appointment`
+        resultDate.style.color = `red`
+    } else {
+        resultDate.style.display = `none`
+    }
+
+    const timeSelect = selectTime.value
+    if (timeSelect === ``) {
+        resultTime.textContent = `❌ Please select time to book an appointment`
+        resultTime.style.color = `red`
+    } else {
+        resultTime.style.display = `none`
+    }
+
+    const message = inputMessage.value
+    if  (message.length < 10) {
         resultMessage.textContent = `❌ The "Message" field must contain a minimum of 3 words`
         resultMessage.style.color = `red`
     } else {
-        resultEmail.style.display = `none`
         resultMessage.style.display = `none`
-    }
-    if (select.value === true) {
-        resultSelect.style.display = `none`
-    } else {
-        resultSelect.textContent = `❌ Please select day and time in order to book an appointment`
-        resultSelect.style.color = `red`
     }
 }
     
