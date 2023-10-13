@@ -568,9 +568,7 @@
             justify-content: left;
             padding: 40px 0;
         }
-        .form-textarea {
-        grid-column: 1 / span 2;
-        }
+      
         #resultMessage {
         grid-column: 1 / span 2;
         }
@@ -615,6 +613,7 @@
             background-size: 1em;
         }
         .form-textarea {
+            grid-column: 1 / span 2;
             align-items: flex-start;
             padding: 15px 0 100px 20px;
             border: 1px solid var(--mutedgrey);
@@ -691,8 +690,16 @@
                 display: flex;
                 flex-direction: column;
             }
+            .form-textarea {
+                width: 250px;
+            }
+           
+            #resultMessage {
+            width: 250px;
+            }
+            
             .form-button {
-                width: auto;
+                width: 250px;
             }
             .form-contact {
                 display: flex;
@@ -707,9 +714,22 @@
                 width: 300px;
             }
         }
+        #user_block {
+            padding: 40px 0;
+            background-color: #BDBDBD;
+            margin-bottom: 40px;
+        }
         </style>
     </head>
     <body>
+        <div id="user_block">
+            <form action="">
+                <input type="text">
+                <input type="submit">
+            </form>
+            <ul id="user_info"></ul>
+        </div>
+
         <section class="header-page">
             <div class="container">
                 <header class="banner">

@@ -1,5 +1,5 @@
 document.addEventListener(`DOMContentLoaded`, function () {
-    const form = document.getElementById('form')
+    /*const form = document.getElementById('form')
     const inputName = document.getElementById('inputName')
     const resultName = document.getElementById('resultName')
     const inputMessage = document.getElementById(`inputMessage`)
@@ -57,12 +57,79 @@ document.addEventListener(`DOMContentLoaded`, function () {
     } else {
         resultMessage.style.display = `none`
     }
-}
+} */
     
 
 
+fetch(`https://jsonplaceholder.typicode.com/users`)
+.then ((response) => {
+    if (!response.ok) {
+        throw new Error(`Netwrok response was not ok`)
+    }
+    return response.json()
+})
+.then((usersData) => {
+    handleUser(usersData)
+})
+.catch((error) => {
+    console.log(`There was a problem with the fetch operations`, error.message)
+})
 
+const handleUser = (users) => {
+const form = document.querySelector(`#user_block form`)
+const input = form.querySelector(`input[type=text]`)
 
+form.addEventListener(`submit`, handleSubmit)
+function handleSubmit(event) {
+    event.preventDefault()
+
+    let inputValue = input.value 
+    let myUser = users.find((el) => el.name === inputValue)
+    let myUserId
+    
+    if (myUser) {
+        myUserId = myUser.id
+        getUserPosts(myUserId)
+    } else {
+        const userBlock = document.getElementById(`user_block`)
+        const postsList = document.getElementById(`user_info`)
+
+        if (!!postsList) {
+            userBlock.removeChild(postsList)
+        }
+        const errorMessage = document.createElement(`p`)
+        errorMessage.textContent = `User with the name ${inputValue} does not exist`
+        form.removeChild(errorMessage)
+        form.appendChild(errorMessage)
+    }
+ }
+}
+
+const getUserPosts = (myUserId) => {
+    fetch(`https://jsonplaceholder.typicode.com/posts?userId=${myUserId}`)
+    .then((response) => {
+        return response.json()
+    })
+    .then((posts) => {
+        let postsList = document.getElementById(`user_info`)
+
+        posts.forEach((post) => {
+            const listItem = document.createElement(`li`)
+            const postTitle = document.createElement(`h3`)
+            const postBody = document.createElement(`p`)
+
+            postTitle.textContent = post.postTitle
+            postBody.textContent = post.postBody
+
+            postsList.appendChild(listItem)
+            listItem.appendChild(postTitle)
+            listItem.appendChild(postBody)
+        })
+    })
+    .error((error) => {
+        console.log(`Error`, error)
+    })
+}
 
 
 
