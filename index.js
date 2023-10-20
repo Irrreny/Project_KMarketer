@@ -1,5 +1,5 @@
 document.addEventListener(`DOMContentLoaded`, function () {
-    /*const form = document.getElementById('form')
+    const form = document.getElementById('form')
     const inputName = document.getElementById('inputName')
     const resultName = document.getElementById('resultName')
     const inputMessage = document.getElementById(`inputMessage`)
@@ -11,9 +11,57 @@ document.addEventListener(`DOMContentLoaded`, function () {
     const selectTime = document.getElementById(`inputTime`)
     const resultTime = document.getElementById(`resultTime`)
 
+    form.addEventListener('submit', handleSubmit)
+    function handleSubmit(event) {
+      event.preventDefault()
     
-    form.addEventListener('submit', handleName)
-    function handleName(event) {
+      let allInputs = [
+        {
+            value: inputName.value,
+            successLabel: `Hi, ${inputName.value}! Your name was successfully added`,
+            errorLabel: 'Your name should contain at least 3 characters',
+            condition: inputName.value.length > 2,
+        },
+      ]
+  
+      const handleSuccess = (value, label = '') => {
+        element.querySelector('#result').textContent = label
+        element.classList.add('success')
+      }
+      const handleError = (value, label = '') => {
+        element.querySelector('#result').textContent = label
+        element.classList.add('error')
+      }
+
+      const validateInput = (item) => {
+        const { value, condition } = item;
+
+      if (condition) {
+        handleSuccess(successLabel);
+      } else {
+        handleError(errorLabel);
+      }
+    }
+      allInputs.forEach((item) => validateInput(item));
+    };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+})
+
+/*form.addEventListener('submit', handleSubmit)
+    function handleSubmit(event) {
       event.preventDefault()
 
       const name = inputName.value.trim() 
@@ -58,90 +106,3 @@ document.addEventListener(`DOMContentLoaded`, function () {
         resultMessage.style.display = `none`
     }
 } */
-    
-
-
-fetch(`https://jsonplaceholder.typicode.com/users`)
-.then ((response) => {
-    if (!response.ok) {
-        throw new Error(`Netwrok response was not ok`)
-    }
-    return response.json()
-})
-.then((usersData) => {
-    handleUser(usersData)
-})
-.catch((error) => {
-    console.log(`There was a problem with the fetch operations`, error.message)
-})
-
-const handleUser = (users) => {
-const form = document.querySelector(`#user_block form`)
-const input = form.querySelector(`input[type=text]`)
-
-form.addEventListener(`submit`, handleSubmit)
-function handleSubmit(event) {
-    event.preventDefault()
-
-    let inputValue = input.value 
-    let myUser = users.find((el) => el.name === inputValue)
-    let myUserId
-    
-    if (myUser) {
-        myUserId = myUser.id
-        getUserPosts(myUserId)
-    } else {
-        const userBlock = document.getElementById(`user_block`)
-        const postsList = document.getElementById(`user_info`)
-
-        if (!!postsList) {
-            userBlock.removeChild(postsList)
-        }
-        const errorMessage = document.createElement(`p`)
-        errorMessage.textContent = `User with the name ${inputValue} does not exist`
-        form.removeChild(errorMessage)
-        form.appendChild(errorMessage)
-    }
- }
-}
-
-const getUserPosts = (myUserId) => {
-    fetch(`https://jsonplaceholder.typicode.com/posts?userId=${myUserId}`)
-    .then((response) => {
-        return response.json()
-    })
-    .then((posts) => {
-        let postsList = document.getElementById(`user_info`)
-
-        posts.forEach((post) => {
-            const listItem = document.createElement(`li`)
-            const postTitle = document.createElement(`h3`)
-            const postBody = document.createElement(`p`)
-
-            postTitle.textContent = post.postTitle
-            postBody.textContent = post.postBody
-
-            postsList.appendChild(listItem)
-            listItem.appendChild(postTitle)
-            listItem.appendChild(postBody)
-        })
-    })
-    .error((error) => {
-        console.log(`Error`, error)
-    })
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-} )
