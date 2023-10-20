@@ -1,4 +1,43 @@
+//-----Home Work 23(promises, async/await)------//
 document.addEventListener(`DOMContentLoaded`, function () {
+  //----------Async/Await----------//
+
+  const getPostComment = async () => {
+  let response = await fetch(`https://jsonplaceholder.typicode.com/users/3`)
+  let user = await response.json()
+
+  let postsResponse = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${user.id}`)
+  let post = await postsResponse.json()
+  console.table(post)
+  
+  let commentsResponse = await fetch(`https://jsonplaceholder.typicode.com/posts/1/comments?id=${user.id}`)
+  let comment = await commentsResponse.json()
+  console.table(comment)
+}
+getPostComment()
+
+//----------Promises----------//
+
+function getPostsComments(userId) {
+  fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)
+  .then(response => response.json())
+  .then(data => console.table(data))
+
+  fetch(`https://jsonplaceholder.typicode.com/posts/1/comments?id=${userId}`)
+  .then(comment => comment.json())
+  .then(data2 => console.table(data2))
+  .catch(error => console.log(error))
+}
+getPostsComments(3)
+})
+
+
+
+
+
+
+//------Form Validation not finished--------//
+/*document.addEventListener(`DOMContentLoaded`, function () {
     const form = document.getElementById('form')
     const inputName = document.getElementById('inputName')
     const resultName = document.getElementById('resultName')
