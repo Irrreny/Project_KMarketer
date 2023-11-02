@@ -550,6 +550,12 @@
         .form-footer {
             background-color: white;
         }
+        .error {
+            color: red;
+        }
+        .success {
+            color: green;
+        }
         #resultName, #resultEmail, #resultMessage, #resultSelect, #resultDate, #resultTime {
             margin: 0;
             font-family: Montserrat;
@@ -939,8 +945,8 @@
                 <input type="text" id="inputName" class="form-data" name="fullname" placeholder="Full Name">
                 
                 <input type="email" id="inputEmail" class="form-data" name="email" placeholder="example@gmail.com" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}">
-                <p id="result"></p>
-                <p id="result"></p>
+                <p id="resultName"></p>
+                <p id="resultEmail"></p>
                 <select id="inputDate" class="form-select" name="date">
                     <option value="">Please Select</option>
                     <option value="mo">Monday</option>
@@ -956,10 +962,10 @@
                     <option value="3pm">3pm</option>
                     <option value="4pm">4pm</option>
                 </select>
-                <p id="result"></p>
-                <p id="result"></p>
+                <p id="resultTime"></p>
+                <p id="resultDate"></p>
                 <textarea id="inputMessage" class="form-textarea" name="message" rows="5" cols="20" placeholder="Message"></textarea>
-                <p id="result"></p>
+                <p id="resultMessage"></p>
                 <input class="form-button" type="submit" value="Book Appointment">
               </form>
               

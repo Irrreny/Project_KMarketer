@@ -1,4 +1,45 @@
 document.addEventListener('DOMContentLoaded', function () {
+
+  function validation(form) {
+    let result = true
+
+    return result
+  }
+  
+  document.getElementById(`form`).addEventListener(`submit`, function(event) {
+    event.preventDefault()
+
+    if(validation(this) == true) {
+      alert(`CONGRATULATIONS!`)
+    }
+  })
+
+
+
+
+
+
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*document.addEventListener('DOMContentLoaded', function () {
     let form = document.getElementById('contact-form');
     let inputFullName = document.getElementById('inputFullName');
     let inputEmail = document.getElementById('inputEmail');
@@ -95,5 +136,6 @@ document.addEventListener('DOMContentLoaded', function () {
       formElements.forEach((item) => validateElement(item));
     }
   });
+  */
   
   

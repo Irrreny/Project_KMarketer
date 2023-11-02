@@ -31,7 +31,72 @@ function getPostsComments(userId) {
 getPostsComments(3)
 })
 
+document.addEventListener(`DOMContentLoaded`, function () {
+  const form = document.getElementById('form')
+  const inputName = document.getElementById('inputName')
+  const inputEmail = document.getElementById(`inputEmail`)
+  const selectDate = document.getElementById(`inputDate`)
+  const selectTime = document.getElementById(`inputTime`)
+  const inputMessage = document.getElementById(`inputMessage`)
 
+  const fields = [
+    { 
+    element: inputName, 
+    result: document.getElementById('resultName'), 
+    errorMessage: 'Name should contain at least 2 letters', 
+    successMessage: 'Your name was succesfully added' },
+    { 
+    element: inputEmail, 
+    result: document.getElementById('resultEmail'), 
+    errorMessage: 'Please enter your email',
+    successMessage: 'Your email was succesfully added' },
+    { 
+    element: selectDate, 
+    result: document.getElementById('resultDate'), 
+    errorMessage: 'Please select day to book an appointment',
+    successMessage: 'The date was selected' },
+    { 
+    element: selectTime, 
+    result: document.getElementById('resultTime'), 
+    errorMessage: 'Please select time to book an appointment',
+    successMessage: 'The time was selected' },
+    { 
+    element: inputMessage, 
+    result: document.getElementById('resultMessage'), 
+    errorMessage: 'The "Message" field must contain a minimum of 3 words',
+    successMessage: 'Youe message was added' }
+  ]
+
+  form.addEventListener('submit', handleSubmit)
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    fields.forEach(field => {
+      validateFieldOrSelect(field)
+    });
+  }
+
+  function validateFieldOrSelect({ element, result, errorMessage, successMessage}) {
+    const value = element.value.trim()
+    if (value.length < 2) {
+      displayErrorMessage(result, errorMessage)
+    } else {
+      displaySuccessMessage(result, successMessage)
+    }
+  }
+
+  function displayErrorMessage(element, message) {
+    element.textContent = `❌ ${message}`
+    element.style.color = `red`
+  }
+
+  function displaySuccessMessage(element, message) {
+    element.textContent = `✔️ ${message}`
+    element.style.color = `green`
+  }
+
+})
 
 
 
@@ -50,56 +115,7 @@ getPostsComments(3)
     const selectTime = document.getElementById(`inputTime`)
     const resultTime = document.getElementById(`resultTime`)
 
-    form.addEventListener('submit', handleSubmit)
-    function handleSubmit(event) {
-      event.preventDefault()
-    
-      let allInputs = [
-        {
-            value: inputName.value,
-            successLabel: `Hi, ${inputName.value}! Your name was successfully added`,
-            errorLabel: 'Your name should contain at least 3 characters',
-            condition: inputName.value.length > 2,
-        },
-      ]
-  
-      const handleSuccess = (value, label = '') => {
-        element.querySelector('#result').textContent = label
-        element.classList.add('success')
-      }
-      const handleError = (value, label = '') => {
-        element.querySelector('#result').textContent = label
-        element.classList.add('error')
-      }
-
-      const validateInput = (item) => {
-        const { value, condition } = item;
-
-      if (condition) {
-        handleSuccess(successLabel);
-      } else {
-        handleError(errorLabel);
-      }
-    }
-      allInputs.forEach((item) => validateInput(item));
-    };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-})
-
-/*form.addEventListener('submit', handleSubmit)
+form.addEventListener('submit', handleSubmit)
     function handleSubmit(event) {
       event.preventDefault()
 
@@ -144,4 +160,6 @@ getPostsComments(3)
     } else {
         resultMessage.style.display = `none`
     }
-} */
+}
+
+})*/
