@@ -102,4 +102,72 @@ document.addEventListener(`DOMContentLoaded`, function () {
 
 
 
+//----------Regex----------//
+//----------1----------//
+
+const string = `Today I went to the shop 123 and bought 4 bananas.`
+const numbers = /\d+/g
+const numbersFind = string.match(numbers)
+console.log(numbersFind)
+
+//----------2----------//
+
+const text = `City postal codes: 12345, 98765, 54321`
+const postalCode = /\b[0-9]{5}\b/g
+const codeMatching =  text.match(postalCode)
+
+codeMatching.forEach((code) => {
+
+if (code) {
+console.log(`${code} is valid`)
+} else {
+  console.log(`The postal code is invalid`)
+}
+})
+
+//----------3----------//
+
+const moviesList = [
+`1 The Shawshank Redemption (1994)`,
+`2 The Godfather (1972)`,
+`3 The Godfather: Part II (1974)`,
+`4 Pulp Fiction (1994)`,
+`5 The Good, the Bad and the Ugly (1966)`,
+`6 The Dark Knight (2008)`,
+`7 12 Angry Men (1957)`,
+`8 Schindler's List (1993)`,
+`9 The Lord of the Rings: The Return of the King (2003)`,
+`10 Fight Club (1999)`
+]
+
+moviesList.forEach((movie) => {
+  const year = /\d{4}/g
+  const movieYear = movie.match(year)
+
+  if (movieYear > 1990) {
+    console.log(movie)
+  }
+})
+
+//----------4----------//
+
+const colors = [
+`AliceBlue #F0F8FF`,
+`AntiqueWhite #FAEBD7`,
+`Aqua #00FFFF`,
+`Aquamarine #7FFFD4`,
+`Azure #F0FFFF`,
+`12 bit:`,
+`White #FFF`,
+`Red #F00`,
+`Green #0F0`,
+`Blue #00F`
+]
+
+let colorString = colors.toString()
+const colorsPattern = /#[A-Za-z0-9]{6}\b/g
+const colorsMatch = colorString.match(colorsPattern)
+console.log(colorsMatch)
+ 
+
 
