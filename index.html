@@ -550,6 +550,12 @@
         .form-footer {
             background-color: white;
         }
+        .error {
+            color: red;
+        }
+        .success {
+            color: green;
+        }
         #resultName, #resultEmail, #resultMessage, #resultSelect, #resultDate, #resultTime {
             margin: 0;
             font-family: Montserrat;
@@ -568,9 +574,7 @@
             justify-content: left;
             padding: 40px 0;
         }
-        .form-textarea {
-        grid-column: 1 / span 2;
-        }
+      
         #resultMessage {
         grid-column: 1 / span 2;
         }
@@ -615,6 +619,7 @@
             background-size: 1em;
         }
         .form-textarea {
+            grid-column: 1 / span 2;
             align-items: flex-start;
             padding: 15px 0 100px 20px;
             border: 1px solid var(--mutedgrey);
@@ -691,8 +696,16 @@
                 display: flex;
                 flex-direction: column;
             }
+            .form-textarea {
+                width: 250px;
+            }
+           
+            #resultMessage {
+            width: 250px;
+            }
+            
             .form-button {
-                width: auto;
+                width: 250px;
             }
             .form-contact {
                 display: flex;
@@ -707,9 +720,13 @@
                 width: 300px;
             }
         }
+
+    
+       
         </style>
     </head>
     <body>
+
         <section class="header-page">
             <div class="container">
                 <header class="banner">
@@ -945,8 +962,8 @@
                     <option value="3pm">3pm</option>
                     <option value="4pm">4pm</option>
                 </select>
-                <p id="resultDate"></p>
                 <p id="resultTime"></p>
+                <p id="resultDate"></p>
                 <textarea id="inputMessage" class="form-textarea" name="message" rows="5" cols="20" placeholder="Message"></textarea>
                 <p id="resultMessage"></p>
                 <input class="form-button" type="submit" value="Book Appointment">
