@@ -1,0 +1,91 @@
+@use 'variables';
+
+.section-header {
+    display: flex;
+    padding-top: 80px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .section-header-title {
+        @include variables.headerTitle;
+    }
+    #features-title {
+        text-transform: uppercase;
+        }
+
+    .section-header-text {
+        @include variables.headerText;
+        }
+}
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    background-color: variables.$darkblue;
+    justify-content: center;
+    padding-bottom: 100px;
+
+    .card {
+        background-color: white;
+        border: 15px solid variables.$darkblue;
+        border-radius: 5px;
+        text-align: center;
+        color: variables.$textgrey;
+        padding: 30px;
+        gap: 20px;
+        display: inherit;
+
+        .card-header {
+            display: flex;
+            gap: 15px;
+            justify-content: baseline;
+
+            .card-icon {
+                width: 40px;
+                height: 40px;
+            }
+            .card-header-text {
+                margin: 0;
+                font-size: 16px;
+                font-weight: 900;
+                line-height: 40px;
+                color: var(--darkblue);
+            }
+        }
+
+        .card-content {
+            margin: 0;
+            color: var(--textgrey);
+            text-align: justify;
+            font-weight: 500;
+        }
+    }
+
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+    .features {
+        padding: 0;
+        font-size: smaller;
+    }
+    .section-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 45px 0;
+    }
+    .section-header-title {
+        width: auto;
+        text-align: center;
+    }
+    .section-header-text {
+        width: auto;
+    }
+    .grid-cards {
+        display: grid;
+        grid-template-columns: auto;
+        padding-bottom: 73px;
+    }
+}
