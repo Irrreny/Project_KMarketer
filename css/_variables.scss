@@ -1,0 +1,82 @@
+$orange: #FFA62B;
+$darkblue: #252B42;
+$lightblue: #00A0C1;
+$yellow: #F3CD03;
+$mutedgrey: #BDBDBD;
+$textgrey: #737373;
+
+
+%sectionHeader {
+    display: flex;
+    padding-top: 80px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+%headerTitle {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 57px;
+    margin: 0;
+}
+
+%headerText {
+    font-weight: 500;
+    line-height: 20px;
+    width: 470px;
+    text-align: center;
+}
+
+
+%cardFooterName {
+    margin: 0;
+        color: $darkblue;
+        font-weight: 600;
+        text-align: left;
+        font-size: 14px;
+}
+
+@mixin cardContent {
+    margin: 0;
+    color: $textgrey;
+    text-align: justify;
+    font-weight: 500;
+}
+
+@mixin gridCards {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    background-color: $darkblue;
+    justify-content: center;
+    padding-bottom: 100px;
+}
+
+
+@mixin card {
+    background-color: white;
+        border: 15px solid $darkblue;
+        border-radius: 5px;
+        text-align: center;
+        color: $textgrey;
+        padding: 30px;
+        gap: 20px;
+        display: inherit;
+}
+
+@mixin container {
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+@mixin containerMedia {
+    padding: 0 40px;
+    margin: 0;
+}
+
+
+@mixin sections {
+    background-color: $darkblue;
+}

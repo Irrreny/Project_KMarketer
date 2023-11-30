@@ -1,0 +1,99 @@
+@use 'variables';
+
+
+.clients {
+    @include variables.sections;
+
+    &_container {
+        @include variables.container;
+
+        &_section-header {
+            @extend %sectionHeader;
+            padding-bottom: 80px;
+
+            &-title {
+                @extend %headerTitle;
+                text-transform: uppercase;
+            }
+            &-text {
+                @extend %headerText;
+                }
+        }
+
+        &-grid-cards {
+            @include variables.gridCards;
+    
+        &-card {
+            @include variables.card;
+
+            &_header {
+                display: flex;
+
+                &_icon {
+                    width: 22px;
+                    height: 22px;
+                }
+            }
+
+            &-content {
+                @include variables.cardContent;
+             }
+
+            &_footer {
+                display: grid;
+                grid-template-columns: repeat(2,auto);
+                justify-content: flex-start;
+                column-gap: 15px;
+
+                &_photo_icon {
+                    grid-row: 1 / span 2;
+                   }
+                
+                &_name-link {
+                    color: variables.$orange;
+                    text-decoration: none;
+                    font-weight: 600;
+                   }
+
+                &_name-link:hover {
+                    text-decoration: underline;
+                }
+
+                &_name {
+                    @extend %cardFooterName;
+                    text-transform: uppercase;
+                }
+
+            }
+
+        }
+
+
+    }
+}
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+    .clients_container_section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 45px 0;
+    }
+    .clients_container_section-header-title {
+    width: auto;
+    text-align: center;
+    }
+    .clients_container_section-header-text {
+        width: auto;
+    }
+    .clients_container-grid-cards {
+        display: grid;
+    grid-template-columns: auto;
+    padding-bottom: 73px;
+    }
+    .clients_container {
+        padding: 0 40px;
+    margin: 0;
+    }
+}  

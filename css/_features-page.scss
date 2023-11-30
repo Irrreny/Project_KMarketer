@@ -1,0 +1,82 @@
+@use 'variables';
+
+.features {
+    @include variables.sections;
+    
+    &_container {
+    @include variables.container;
+    
+    &-section-header {
+        @extend %sectionHeader;
+        
+        &-title {
+            @extend %headerTitle;
+            text-transform: uppercase;
+        }
+
+        &-text {
+            @extend %headerText;
+            }
+    }
+    &-grid-cards {
+        @include variables.gridCards;
+    
+
+    &-card {
+        @include variables.card;
+
+        &-header {
+            display: flex;
+            gap: 15px;
+            justify-content: baseline;
+
+            &-icon {
+                width: 40px;
+                height: 40px;
+            }
+            &-text {
+                margin: 0;
+                font-size: 16px;
+                font-weight: 900;
+                line-height: 40px;
+                color: variables.$textgrey;
+            }
+        }
+
+        &-content {
+           @include variables.cardContent;
+        }
+    }
+
+}
+}
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+    .features {
+        padding: 0;
+        font-size: smaller;
+    }
+    .features_container {
+        padding: 0 40px;
+        margin: 0;
+    }
+    .features_container-section-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 45px 0;
+    }
+    .features_container-section-header-title {
+        width: auto;
+        text-align: center;
+    }
+    .features_container-section-header-text {
+        width: auto;
+    }
+    .features_container-grid-cards {
+        display: grid;
+        grid-template-columns: auto;
+        padding-bottom: 73px;
+    }
+}

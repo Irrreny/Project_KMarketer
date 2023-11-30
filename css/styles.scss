@@ -1,0 +1,59 @@
+
+@use 'variables';
+@use 'header-page';
+@use 'features-page';
+@use 'clients-page';
+@use 'contactus-page';
+@use 'footer-page';
+@use 'team-page';
+@use 'video-page';
+
+body {
+    margin: 0;
+    color: white;
+    font-size: 14px;
+    font-family: Montserrat;
+    letter-spacing: 0.2px;
+}
+
+ul {
+padding: 0;
+list-style: none;
+margin: 0;
+}
+button {
+padding: 0;
+}
+
+.error {
+    color: red;
+}
+.success {
+    color: green;
+}
+#resultName, #resultEmail, #resultMessage, #resultSelect, #resultDate, #resultTime {
+    margin: 0;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    width: 270px;
+}
+#resultMessage {
+    width: 500px;
+}
+
+
+#resultMessage {
+grid-column: 1 / span 2;
+}
+
+::placeholder {
+    color: variables.$mutedgrey;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    font-family: Montserrat;
+}
+
+
+
