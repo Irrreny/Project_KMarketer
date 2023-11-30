@@ -1,0 +1,179 @@
+@use 'variables';
+
+.contact-us {
+    background-image: url(/img/backgroundcontact-us.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    background-position-y: center;
+    overflow: auto;
+
+    &_container {
+        margin: 0 auto;
+        justify-content: left;
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        padding-right: 25%;
+
+        &_header-secondary {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 24px;
+            padding-top: 90px;
+            margin: 0;
+        }
+        &_header-primary {
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 57px;
+            margin: 0;
+        }
+
+        &_form-appointment {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(4, auto);
+            gap: 20px;
+            justify-content: left;
+            padding: 40px 0;
+
+            &_data {
+                align-items: flex-start;
+                padding: 15px 0 15px 20px;
+                border: 1px solid variables.$mutedgrey;
+                background-color: #F9F9F9;
+                border-radius: 5px;
+                width: 250px;
+                outline-color: variables.$orange;
+            }
+
+            &_select {
+                align-items: flex-start;
+                padding: 15px 0 15px 20px;
+                border: 1px solid variables.$mutedgrey;
+                background-color: #F9F9F9;
+                border-radius: 5px;
+                width: 273px;
+                color: variables.$mutedgrey;
+                font-weight: 600;
+                font-family: Montserrat;
+                outline-color: variables.$orange;
+                appearance: none;
+                background-image: url(/img/icons/Vector.svg);
+                background-repeat: no-repeat;
+                background-position: right 1rem center;
+                background-size: 1em;
+            }
+
+            &_textarea {
+                grid-column: 1 / span 2;
+                align-items: flex-start;
+                padding: 15px 0 100px 20px;
+                border: 1px solid variables.$mutedgrey;
+                background-color: #F9F9F9;
+                border-radius: 5px;
+                outline-color: variables.$orange;
+            }
+
+            &_button {
+                padding: 15px 40px;
+                background-color: variables.$orange;
+                border: none;
+                border-radius: 5px;
+                color: white;
+                font-weight: 700;
+                line-height: 28px;
+                letter-spacing: 0.2px;
+                font-size: 14px;
+                width: 200px;
+                cursor: pointer;
+                margin: 20px 0 50px 0;
+                transition: 1s;
+            }
+            &_button:hover {
+                transform: scale(1.2); 
+            }
+        }
+    }
+}
+
+.form-footer {
+    background-color: white;
+
+    &_container {
+        @include variables.container;
+
+        &_contact {
+            display: grid;
+            grid-template-columns: auto auto;
+            padding: 40px 45px;
+            column-gap: 360px;
+
+            &_header {
+                color: variables.$darkblue;
+                font-size: 24px;
+                font-weight: 900px;
+                line-height: 32px;
+                margin: 0;
+                padding-bottom: 10px;
+            }
+            &_par {
+                color: variables.$textgrey;
+                margin: 0;
+            }
+            &_button {
+                background-color: variables.$orange;
+                border: none;
+                border-radius: 5px;
+                color: white;
+                padding: 15px 40px;
+                font-weight: 700;
+                line-height: 28px;
+                cursor: pointer;
+                font-size: 14px;
+                transition: 1s;
+            }
+            &_button:hover {
+                transform: scale(1.2); 
+            }
+
+        }
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+    .contact-us_container {
+        padding: 0 45px;
+    }
+    .contact-us_container_header-primary {
+        width: 300px;
+    }
+    .contact-us_container_form-appointment {
+        display: flex;
+        flex-direction: column;
+    }
+    .contact-us_container_form-appointment_textarea {
+        width: 250px;
+    }
+   
+    #resultMessage {
+    width: 250px;
+    }
+    
+    .contact-us_container_form-appointment_button {
+        width: 250px;
+    }
+    .form-footer_container_contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .form-footer-text {
+        width: 250px;
+        padding: 40px;
+    }
+    .form-footer_container_contact_button {
+        width: 300px;
+    }
+}

@@ -7,626 +7,162 @@
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
         <link rel="stylesheet" href="css/styles.scss">
         <script src="index.js"></script>
-        <style>
-                  
-            
-    
-           
-           
-           
-           
-           
-           
-        
-        
-        
-       
-        
-        
-        
-        
-        
-       
-       
-        
-        
-        #clients-header {
-            padding-bottom: 80px;
-        }
-        .clients-card-header {
-            display: flex;
-        }
-        .clients-card-icon {
-            width: 22px;
-            height: 22px;
-        }
-        .card-footer {
-            display: grid;
-            grid-template-columns: repeat(2,auto);
-            justify-content: flex-start;
-            column-gap: 15px;
-        }
-       .card-photo-icon {
-        grid-row: 1 / span 2;
-       }
-       .card-name-link {
-        color: var(--orange);
-        text-decoration: none;
-        font-weight: 600;
-       }
-       .card-name-link:hover {
-        text-decoration: underline;
-       }
-       .card-footer-name {
-        margin: 0;
-        color: var(--darkblue);
-        font-weight: 600;
-        text-align: left;
-        font-size: 14px;
-       }
-       #team-card {
-        padding: 0;
-       }
-       .card-body {
-        background-color: white;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px 30px 30px;
-       }
-       .card-body-name {
-        margin: 0;
-        color: var(--darkblue);
-        font-size: 16px;
-        font-weight: 800;
-       }
-        .team-card-job {
-            margin: 0;
-            font-weight: 600;
-        }
-        #ceo {
-            text-transform: uppercase;
-        }
-        .team-card-links {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            align-items: last baseline;
-        }
-        .photo-toshow {
-            display: none;
-        }
-        @media screen and (min-width: 320px) and (max-width: 768px) {
-            #clients-header {
-                padding-bottom: 60px;
-            }
-            .photo-tohide {
-                display: none;
-            }
-            .photo-toshow {
-                display: block;
-            }
-        }
-        .video-section {
-            margin: 0 auto;
-            display: flex;
-            background-image:  linear-gradient(to bottom, rgba(37, 43, 66, 1), rgba(0, 0, 0, 0.5)), url(img/backgroundvideo.png);
-            padding-bottom: 80px;
-            justify-content: center;
-            align-items: center;
-        }
-        .content-video {
-            display: table;
-            width: auto;
-            position: relative;
-            width: 50%;
-        }
-        .video-show {
-            display: none;
-        }
-        .playpause {
-            background-image:url(img/play.svg);
-            background-color: var(--lightblue);
-            background-repeat:no-repeat;
-            width: 100px;
-            height: 100px;
-            border-radius: 73px;
-            position: absolute;
-            left: 0%;
-            right: 0%;
-            top: 0%;
-            bottom: 15%;
-            margin: auto;
-            background-position: center;
-            cursor: pointer;
-        }   
-        @media screen and (min-width: 320px) and (max-width: 768px) {
-            .video-hide {
-                display: none;
-            }
-            .video-show {
-                display: flex;
-            }
-        }    
-        .footer {
-            background-color: var(--darkblue);
-        }
-        .footer-header {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            gap: 570px;
-            padding: 40px 0;
-        }
-        .footer-social-list {
-            display: flex;
-            flex-direction: row;
-            gap: 20px;
-            align-items: center;
-            padding-right: 10px;
-        }
-        .footer-icon:hover {
-            background-color: #FFA62B;
-        }
-        hr {
-            border: none; 
-            color: #364067;
-            background-color: #364067;;
-            height: 1px;
-        }
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(5, auto);
-            padding: 70px 0;
-            gap: 30px;
-        }
-        .footer-info {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .footer-container-header {
-            font-size: 16px;
-            font-weight: 700;
-            line-height: 24px;
-            margin: 0;
-            padding-bottom: 10px;
-        }
-        .footer-link {
-            text-decoration: none;
-            color: var(--grey);
-        }
-        .footer-link:hover {
-            text-decoration: underline;
-        }
-        .footer-subscribe {
-            display: flex;
-            flex-direction: row;
-        }
-        .footer-email {
-            display: flex;
-            align-items: center;
-            border-radius: 5px 0 0 5px;
-            border: 1px solid #E6E6E6;
-            background-color: #F9F9F9;
-            padding: 15px 20px;
-            flex-grow: 1;
-            outline-color: var(--orange);
-            outline-width: 1px;
-        }
-    
-        .footer-email:hover {
-            border: 1px solid white;
-        }
-        .footer-button {
-            display: flex;
-            height: 58px;
-            padding: 15px 22px;
-            justify-content: center;
-            flex-shrink: 0;
-            border-radius: 0 5px 5px 0;
-            border: 1px solid #E6E6E6;
-            background-color: var(--orange);
-            color: white;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 400;
-        }
-        .footer-button:hover {
-            border: 1px solid white;
-            font-weight: bolder;
-        }
-        .form-text {
-            font-size: 12px; 
-            color: var(--mutedgrey); 
-            margin: 0;
-        }
-        .footer-final {
-            background-color: #16697A;
-            background-position-x: center;
-            padding: 0 195px;
-            margin: 0 auto;
-        }
-        .footer-final-text {
-            padding: 25px 0;
-            font-weight: 600;
-            line-height: 24px;
-            margin: 0 auto;
-        }
-        @media screen and (min-width: 320px) and (max-width: 768px) {
-            .footer-header {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 50px;
-            }
-            .footer-container {
-                display: grid;
-                grid-template-columns: auto;
-            }
-            .footer-email {
-                width: 7em;
-            }
-            .footer-final {
-                padding: 0;
-            }
-            .footer-final-text {
-                font-weight: lighter;
-                text-align: center;
-                padding: 25px 45px;
-            }
-        }
-       
-        .contact-us {
-            background-image: url(img/backgroundcontact-us.jpg);
-            background-size: cover;
-            background-repeat: no-repeat;
-            display: flex;
-            background-position-y: center;
-            overflow: auto;
-        }
-        .container-contact {
-            margin: 0 auto;
-            justify-content: left;
-            align-items: flex-start;
-            display: flex;
-            flex-direction: column;
-            padding-right: 25%;
-        }
-       
-        .form-footer {
-            background-color: white;
-        }
-        .error {
-            color: red;
-        }
-        .success {
-            color: green;
-        }
-        #resultName, #resultEmail, #resultMessage, #resultSelect, #resultDate, #resultTime {
-            margin: 0;
-            font-family: Montserrat;
-            font-size: 14px;
-            font-weight: 400;
-            width: 270px;
-        }
-        #resultMessage {
-            width: 500px;
-        }
-        .form-appointment {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: repeat(4, auto);
-            gap: 20px;
-            justify-content: left;
-            padding: 40px 0;
-        }
-      
-        #resultMessage {
-        grid-column: 1 / span 2;
-        }
-        
-        .header-secondary {
-            font-size: 16px;
-            font-weight: 700;
-            line-height: 24px;
-            padding-top: 90px;
-            margin: 0;
-        }
-        .header-primary {
-            font-size: 40px;
-            font-weight: 700;
-            line-height: 57px;
-            margin: 0;
-        }
-        .form-data {
-            align-items: flex-start;
-            padding: 15px 0 15px 20px;
-            border: 1px solid var(--mutedgrey);
-            background-color: #F9F9F9;
-            border-radius: 5px;
-            width: 250px;
-            outline-color: var(--orange);
-        }
-        .form-select {
-            align-items: flex-start;
-            padding: 15px 0 15px 20px;
-            border: 1px solid var(--mutedgrey);
-            background-color: #F9F9F9;
-            border-radius: 5px;
-            width: 273px;
-            color: var(--mutedgrey);
-            font-weight: 600;
-            font-family: Montserrat;
-            outline-color: var(--orange);
-            appearance: none;
-            background-image: url(img/icons/Vector.svg);
-            background-repeat: no-repeat;
-            background-position: right 1rem center;
-            background-size: 1em;
-        }
-        .form-textarea {
-            grid-column: 1 / span 2;
-            align-items: flex-start;
-            padding: 15px 0 100px 20px;
-            border: 1px solid var(--mutedgrey);
-            background-color: #F9F9F9;
-            border-radius: 5px;
-            outline-color: var(--orange);
-        }
-        ::placeholder {
-            color: var(--mutedgrey);
-            font-weight: 600;
-            line-height: 24px;
-            letter-spacing: 0.2px;
-            font-family: Montserrat;
-        }
-        .form-button {
-            padding: 15px 40px;
-            background-color: var(--orange);
-            border: none;
-            border-radius: 5px;
-            color: white;
-            font-weight: 700;
-            line-height: 28px;
-            letter-spacing: 0.2px;
-            font-size: 14px;
-            width: 200px;
-            cursor: pointer;
-            margin: 20px 0 50px 0;
-            transition: 1s;
-        }
-        .form-button:hover {
-            transform: scale(1.2); 
-        }
-        .form-contact {
-            display: grid;
-            grid-template-columns: auto auto;
-            padding: 40px 0;
-            column-gap: 360px;
-        }
-        .form-footer-header {
-            color: var(--darkblue);
-            font-size: 24px;
-            font-weight: 900px;
-            line-height: 32px;
-            margin: 0;
-            padding-bottom: 10px;
-        }
-        .form-footer-par {
-            color: var(--textgrey);
-            margin: 0;
-        }
-        .form-footer-button {
-            background-color: var(--orange);
-            border: none;
-            border-radius: 5px;
-            color: white;
-            padding: 15px 40px;
-            font-weight: 700;
-            line-height: 28px;
-            cursor: pointer;
-            font-size: 14px;
-            transition: 1s;
-        }
-        .form-footer-button:hover {
-            transform: scale(1.2); 
-        }
-        @media screen and (min-width: 320px) and (max-width: 768px) {
-            .container-contact {
-                padding: 0 45px;
-            }
-            .header-primary {
-                width: 300px;
-            }
-            .form-appointment {
-                display: flex;
-                flex-direction: column;
-            }
-            .form-textarea {
-                width: 250px;
-            }
-           
-            #resultMessage {
-            width: 250px;
-            }
-            
-            .form-button {
-                width: 250px;
-            }
-            .form-contact {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            .form-footer-text {
-                width: 250px;
-                padding: 40px;
-            }
-            .form-footer-button {
-                width: 300px;
-            }
-        }
-
-    
-       
-        </style>
     </head>
     <body>
 
         <section class="header-page">
-            <div class="container">
-                <header class="banner">
-                     <a href="#" class="banner-home-link"><img src="img/KMarketer.png" alt="Home logo"></a>
-                <nav class="banner-nav-bar">
-                    <ul class="banner-nav-bar-nav-list">
-                        <li><a href="#" class="banner-nav-bar-nav-list-item">Home</a></li>
-                        <li><a href="#" class="banner-nav-bar-nav-list-item">Product</a></li>
-                        <li><a href="#" class="banner-nav-bar-nav-list-item">Pricing</a></li>
-                        <li><a href="#" class="banner-nav-bar-nav-list-item">Contact</a></li>
+            <div class="header-page_container">
+                <header class="header-page_container_banner">
+                     <a href="#" class="header-page_container_banner-home-link"><img src="img/KMarketer.png" alt="Home logo"></a>
+                <nav class="header-page_container_banner-nav-bar">
+                    <ul class="header-page_container_banner-nav-bar-nav-list">
+                        <li><a href="#" class="header-page_container_banner-nav-bar-nav-list-item">Home</a></li>
+                        <li><a href="#" class="header-page_container_banner-nav-bar-nav-list-item">Product</a></li>
+                        <li><a href="#" class="header-page_container_banner-nav-bar-nav-list-item">Pricing</a></li>
+                        <li><a href="#" class="header-page_container_banner-nav-bar-nav-list-item">Contact</a></li>
                     </ul>
                 </nav>
-                <ul class="banner-action-buttons">
-                    <li><button class="banner-action-buttons-action-item"><img src="img/searchbtn.svg" class="banner-action-buttons-action-item-icon" alt="Search bar"></button></li>
-                    <li><button class="banner-action-buttons-action-item"><img src="img/cartbtn.svg" class="banner-action-buttons-action-item-icon" alt="Shopping cart"></button></li>
+                <ul class="header-page_container_banner-action-buttons">
+                    <li><button class="header-page_container_banner-action-buttons-action-item"><img src="img/searchbtn.svg" class="header-page_container_banner-action-buttons-action-item-icon" alt="Search bar"></button></li>
+                    <li><button class="header-page_container_banner-action-buttons-action-item"><img src="img/cartbtn.svg" class="header-page_container_banner-action-buttons-action-item-icon" alt="Shopping cart"></button></li>
                 </ul>
                 </header>
-            <div class="main-content">
-                <h1 class="main-content-main-text">We Take Care of the Future</h1>
-                <h4 class="main-content-smaller-text">We know how large objects will act, but things on a small scale just do not act that way.</h4>
-            <div class="main-content-call-to-action">
-                <button class="main-content-call-to-action-quote">Get Quote Now</button>
-                <button class="main-content-call-to-action-learn">Learn More</button>
+            <div class="header-page_container_main-content">
+                <h1 class="header-page_container_main-content-main-text">We Take Care of the Future</h1>
+                <h4 class="header-page_container_main-content-smaller-text">We know how large objects will act, but things on a small scale just do not act that way.</h4>
+            <div class="header-page_container_main-content-call-to-action">
+                <button class="header-page_container_main-content-call-to-action-quote">Get Quote Now</button>
+                <button class="header-page_container_main-content-call-to-action-learn">Learn More</button>
             </div>
             </div>
             </div>
         </section>
 
         <section class="features">
-            <div class="container">
-        <div class="section-header">
-            <h2 class="section-header-title" id="features-title">why choose us</h2>
-            <p class="section-header-text">Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics</p>
+            <div class="features_container">
+        <div class="features_container-section-header">
+            <h2 class="features_container-section-header-title" id="features-title">why choose us</h2>
+            <p class="features_container-section-header-text">Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics</p>
         </div>
-        <div class="grid-cards">
-            <div class="card">
-                <div class="card-header">
-                <img class="card-icon" src="img/icons/briefcase.svg" alt="briefcase icon">
-                <h5 class="card-header-text">Digital Marketing</h5>
+        <div class="features_container-grid-cards">
+            <div class="features_container-grid-cards-card">
+                <div class="features_container-grid-cards-card-header">
+                <img class="features_container-grid-cards-card-header-icon" src="img/icons/briefcase.svg" alt="briefcase icon">
+                <h5 class="features_container-grid-cards-card-header-text">Digital Marketing</h5>
                 </div>
-                <p class="card-content">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
+                <p class="features_container-grid-cards-card-content">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
             </div>
-            <div class="card">
-                <div class="card-header">
-                    <img class="card-icon" src="img/icons/shop.svg" alt="Store-shop icon">
-                    <h5 class="card-header-text">Digital Marketing</h5>
+            <div class="features_container-grid-cards-card">
+                <div class="features_container-grid-cards-card-header">
+                    <img class="features_container-grid-cards-card-header-icon" src="img/icons/shop.svg" alt="Store-shop icon">
+                    <h5 class="features_container-grid-cards-card-header-text">Digital Marketing</h5>
                     </div>
-                    <p class="card-content">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
+                    <p class="features_container-grid-cards-card-content">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
             </div>
-            <div class="card">
-                <div class="card-header">
-                <img class="card-icon" src="img/icons/notebook.svg" alt="Notebook icon">
-                    <h5 class="card-header-text">Business Growing</h5>
+            <div class="features_container-grid-cards-card">
+                <div class="features_container-grid-cards-card-header">
+                <img class="features_container-grid-cards-card-header-icon" src="img/icons/notebook.svg" alt="Notebook icon">
+                    <h5 class="features_container-grid-cards-card-header-text">Business Growing</h5>
                     </div>
-                    <p class="card-content">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
+                    <p class="features_container-grid-cards-card-content">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
             </div>
-            <div class="card">
-                <div class="card-header">
-                <img class="card-icon" src="img/icons/users.svg" alt="Users icon">
-                    <h5 class="card-header-text">National top 50 firms</h5>
+            <div class="features_container-grid-cards-card">
+                <div class="features_container-grid-cards-card-header">
+                <img class="features_container-grid-cards-card-header-icon" src="img/icons/users.svg" alt="Users icon">
+                    <h5 class="features_container-grid-cards-card-header-text">National top 50 firms</h5>
                     </div>
-                    <p class="card-content">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
+                    <p class="features_container-grid-cards-card-content">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
             </div>
-            <div class="card">
-                <div class="card-header">
-                <img class="card-icon" src="img/icons/stats.svg" alt="Statistics icon">
-                    <h5 class="card-header-text">National top 50 firms</h5>
+            <div class="features_container-grid-cards-card">
+                <div class="features_container-grid-cards-card-header">
+                <img class="features_container-grid-cards-card-header-icon" src="img/icons/stats.svg" alt="Statistics icon">
+                    <h5 class="features_container-grid-cards-card-header-text">National top 50 firms</h5>
                     </div>
-                    <p class="card-content">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
+                    <p class="features_container-grid-cards-card-content">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
             </div>
-            <div class="card">
-                <div class="card-header">
-                <img class="card-icon" src="img/icons/award.svg" alt="Award icon">
-                    <h5 class="card-header-text">Web Development</h5>
+            <div class="features_container-grid-cards-card">
+                <div class="features_container-grid-cards-card-header">
+                <img class="features_container-grid-cards-card-header-icon" src="img/icons/award.svg" alt="Award icon">
+                    <h5 class="features_container-grid-cards-card-header-text">Web Development</h5>
                     </div>
-                    <p class="card-content">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
+                    <p class="features_container-grid-cards-card-content">the quick fox jumps over the lazy dog the quick fox jumps over the lazy dog</p>
             </div>
         </div>
     </div>
         </section>
 
         <section class="video-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-header-title">We are providing best business service.</h2>
-                    <p class="section-header-text">Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics </p>
+            <div class="video-section_container">
+                <div class="video-section_container_section-header">
+                    <h2 class="video-section_container_section-header-title">We are providing best business service.</h2>
+                    <p class="video-section_container_section-header-text">Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics </p>
                 </div>
-                <div class="content-video">
+                <div class="video-section_container_content-video">
                     <video class="video-hide" poster="img/cover-video.jpg" controls>
                         <source src="how-to-insert-video.mp4" type="video/mp4">
                     This video is not supported by your browser.
                     </video>
-                    <video class="video-show" poster="img/backgroundvideo-small.jpg" controls>
+                    <video class="video-section_container_content-video_toshow" poster="img/backgroundvideo-small.jpg" controls>
                         <source src="how-to-insert-video.mp4" type="video/mp4">
                     This video is not supported by your browser.
                     </video>
-                    <div class="playpause"></div>
+                    <div class="video-section_container_content-video_playpause"></div>
                 </div>
             </div>
         </section>
 
         <section class="clients">
-            <div class="container">
-                <div class="section-header" id="clients-header">
-                    <h2 class="section-header-title">What Clients Say</h2>
-                    <p class="section-header-text">Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics </p>
+            <div class="clients_container">
+                <div class="clients_container_section-header" id="clients-header">
+                    <h2 class="clients_container_section-header-title">What Clients Say</h2>
+                    <p class="clients_container_section-header-text">Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics </p>
                 </div>
-                        <div class="grid-cards">
-                            <div class="card">
-                            <div class="clients-card-header">
-                                <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
-                                <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
-                                <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
-                                <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
-                                <img class="clients-card-icon" src="img/icons/star_empty.svg" alt="empty star icon">
+                        <div class="clients_container-grid-cards">
+                            <div class="clients_container-grid-cards-card">
+                            <div class="clients_container-grid-cards-card_header">
+                                <img class="clients_container-grid-cards-card_header_icon" src="img/icons/star.svg" alt="full star icon">
+                                <img class="clients_container-grid-cards-card_header_icon" src="img/icons/star.svg" alt="full star icon">
+                                <img class="clients_container-grid-cards-card_header_icon" src="img/icons/star.svg" alt="full star icon">
+                                <img class="clients_container-grid-cards-card_header_icon" src="img/icons/star.svg" alt="full star icon">
+                                <img class="clients_container-grid-cards-card_header_icon" src="img/icons/star_empty.svg" alt="empty star icon">
                             </div>
-                            <p class="card-content">Slate helps you see how many more days you need to work to reach your financial goal.</p>
-                            <div class="card-footer">
-                                <img class="card-photo-icon" src="img/icons/photo_regina.svg" alt="photo icon of regina miles">
-                                <a href="#" class="card-name-link">Regina Miles</a>
-                                <h6 class="card-footer-name" id="ceo">ceo</h6>
+                            <p class="clients_container-grid-cards-card-content">Slate helps you see how many more days you need to work to reach your financial goal.</p>
+                            <div class="clients_container-grid-cards-card_footer">
+                                <img class="clients_container-grid-cards-card_footer_photo_icon" src="img/icons/photo_regina.svg" alt="photo icon of regina miles">
+                                <a href="#" class="clients_container-grid-cards-card_footer_name-link">Regina Miles</a>
+                                <h6 class="clients_container-grid-cards-card_footer_name" id="ceo">ceo</h6>
                             </div>
-                            </div>
-
-                            <div class="card">
-                                <div class="clients-card-header">
-                                    <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
-                                    <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
-                                    <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
-                                    <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
-                                    <img class="clients-card-icon" src="img/icons/star_empty.svg" alt="empty star icon">
-                                </div>
-                                <p class="card-content">Slate helps you see how many more days you need to work to reach your financial goal.</p>
-                                <div class="card-footer">
-                                    <img class="card-photo-icon" src="img/icons/photo_ashley.svg" alt="photo icon of ashley fletcher">
-                                    <a href="#" class="card-name-link">Ashley Fletcher</a>
-                                    <h6 class="card-footer-name">Designer</h6>
-                                </div>
                             </div>
 
-                                <div class="card">
-                                    <div class="clients-card-header">
-                                        <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
-                                        <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
-                                        <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
-                                        <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
-                                        <img class="clients-card-icon" src="img/icons/star_empty.svg" alt="empty star icon">
+                            <div class="clients_container-grid-cards-card">
+                                <div class="clients_container-grid-cards-card_header">
+                                    <img class="clients_container-grid-cards-card_header_icon" src="img/icons/star.svg" alt="full star icon">
+                                    <img class="clients_container-grid-cards-card_header_icon" src="img/icons/star.svg" alt="full star icon">
+                                    <img class="clients_container-grid-cards-card_header_icon" src="img/icons/star.svg" alt="full star icon">
+                                    <img class="clients_container-grid-cards-card_header_icon" src="img/icons/star.svg" alt="full star icon">
+                                    <img class="clients_container-grid-cards-card_header_icon" src="img/icons/star_empty.svg" alt="empty star icon">
+                                </div>
+                                <p class="clients_container-grid-cards-card-content">Slate helps you see how many more days you need to work to reach your financial goal.</p>
+                                <div class="clients_container-grid-cards-card_footer">
+                                    <img class="clients_container-grid-cards-card_footer_photo_icon" src="img/icons/photo_ashley.svg" alt="photo icon of ashley fletcher">
+                                    <a href="#" class="clients_container-grid-cards-card_footer_name-link">Ashley Fletcher</a>
+                                    <h6 class="clients_container-grid-cards-card_footer_name">Designer</h6>
+                                </div>
+                            </div>
+
+                                <div class="clients_container-grid-cards-card">
+                                    <div class="clients_container-grid-cards-card_header">
+                                        <img class="clients_container-grid-cards-card_header_icon" src="img/icons/star.svg" alt="full star icon">
+                                        <img class="clients_container-grid-cards-card_header_icon" src="img/icons/star.svg" alt="full star icon">
+                                        <img class="clients_container-grid-cards-card_header_icon" src="img/icons/star.svg" alt="full star icon">
+                                        <img class="clients_container-grid-cards-card_header_icon" src="img/icons/star.svg" alt="full star icon">
+                                        <img class="clients_container-grid-cards-card_header_icon" src="img/icons/star_empty.svg" alt="empty star icon">
                                     </div>
-                                    <p class="card-content">Slate helps you see how many more days you need to work to reach your financial goal.</p>
-                                    <div class="card-footer">
-                                        <img class="card-photo-icon" src="img/icons/photo_avie.svg" alt="photo icon of avie beaton">
-                                        <a href="#" class="card-name-link">Avie Beaton</a>
-                                        <h6 class="card-footer-name">Co-founder</h6>
+                                    <p class="clients_container-grid-cards-card-content">Slate helps you see how many more days you need to work to reach your financial goal.</p>
+                                    <div class="clients_container-grid-cards-card_footer">
+                                        <img class="clients_container-grid-cards-card_footer_photo_icon" src="img/icons/photo_avie.svg" alt="photo icon of avie beaton">
+                                        <a href="#" class="clients_container-grid-cards-card_footer_name-link">Avie Beaton</a>
+                                        <h6 class="clients_container-grid-cards-card_footer_name">Co-founder</h6>
                                     </div>
                                 </div>
                         </div>
@@ -634,45 +170,45 @@
         </section>
 
         <section class="team">
-            <div class="container">
-                <div class="section-header" id="clients-header">
-                    <h2 class="section-header-title">Meet Our Team</h2>
-                    <p class="section-header-text">Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics </p>
+            <div class="team_container">
+                <div class="team_container_section-header" id="clients-header">
+                    <h2 class="team_container_section-header-title">Meet Our Team</h2>
+                    <p class="team_container_section-header-text">Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics </p>
                 </div>
-                <div class="grid-cards">
-                    <div class="card" id="team-card">
+                <div class="team_container-grid-cards">
+                    <div class="team_container-grid-cards-card" id="team_container-grid-cards-card">
                         <img class="photo-tohide" src="img/coverphoto-regina.png" alt="photo of CEO">
-                        <img class="photo-toshow" src="img/mediaphoto-girl.png" alt="photo of CEO">
-                        <div class="card-body">
-                            <h5 class="card-body-name">Regina Miles</h5>
-                            <p class="team-card-job" id="ceo">ceo</p>
-                            <div class="team-card-links">
+                        <img class="team_container-grid-cards-card_photo-toshow" src="img/mediaphoto-girl.png" alt="photo of CEO">
+                        <div class="team_container-grid-cards-card_body">
+                            <h5 class="team_container-grid-cards-card_body_name">Regina Miles</h5>
+                            <p class="team_container-grid-cards-card_body_job" id="ceo">ceo</p>
+                            <div class="team_container-grid-cards-card_body_links">
                                 <a href="#"><img src="img/icons/facebook-blue.svg" alt="facebook link"></a>
                                 <a href="#"><img src="img/icons/instagram-blue.svg" alt="instagram link"></a>
                                 <a href="#"><img src="img/icons/twitter-blue.svg" alt="twitter link"></a>
                             </div>
                         </div>
                     </div>
-                    <div class="card" id="team-card">
+                    <div class="team_container-grid-cards-card" id="team-card">
                         <img class="photo-tohide" src="img/coverphoto-regina.png" alt="photo of Consultant">
-                        <img class="photo-toshow" src="img/mediaphoto-guy.png" alt="photo of CEO">
-                        <div class="card-body">
-                            <h5 class="card-body-name">Rodney Stratton</h5>
-                            <p class="team-card-job">Consultant</p>
-                            <div class="team-card-links">
+                        <img class="team_container-grid-cards-card_photo-toshow" src="img/mediaphoto-guy.png" alt="photo of CEO">
+                        <div class="team_container-grid-cards-card_body">
+                            <h5 class="team_container-grid-cards-card_body_name">Rodney Stratton</h5>
+                            <p class="team_container-grid-cards-card_body_job">Consultant</p>
+                            <div class="team_container-grid-cards-card_body_links">
                                 <a href="#"><img src="img/icons/facebook-blue.svg" alt="facebook link"></a>
                                 <a href="#"><img src="img/icons/instagram-blue.svg" alt="instagram link"></a>
                                 <a href="#"><img src="img/icons/twitter-blue.svg" alt="twitter link"></a>
                             </div>
                         </div>
                     </div>
-                    <div class="card" id="team-card">
+                    <div class="team_container-grid-cards-card" id="team-card">
                         <img class="photo-tohide" src="img/coverphoto-avie.png" alt="photo of Co-Founder">
-                        <img class="photo-toshow" src="img/mediaphoto-girl.png" alt="photo of CEO">
-                        <div class="card-body">
-                            <h5 class="card-body-name">Avie Beaton</h5>
-                            <p class="team-card-job">Co-Founder</p>
-                            <div class="team-card-links">
+                        <img class="team_container-grid-cards-card_photo-toshow" src="img/mediaphoto-girl.png" alt="photo of CEO">
+                        <div class="team_container-grid-cards-card_body">
+                            <h5 class="team_container-grid-cards-card_body_name">Avie Beaton</h5>
+                            <p class="team_container-grid-cards-card_body_job">Co-Founder</p>
+                            <div class="team_container-grid-cards-card_body_links">
                                 <a href="#"><img src="img/icons/facebook-blue.svg" alt="facebook link"></a>
                                 <a href="#"><img src="img/icons/instagram-blue.svg" alt="instagram link"></a>
                                 <a href="#"><img src="img/icons/twitter-blue.svg" alt="twitter link"></a>
@@ -684,17 +220,17 @@
         </section>
 
         <section class="contact-us">
-            <div class="container-contact">
-                <h5 class="header-secondary">Contact Us</h5>
-                <h2 class="header-primary">Make an Appointment</h2>
+            <div class="contact-us_container">
+                <h5 class="contact-us_container_header-secondary">Contact Us</h5>
+                <h2 class="contact-us_container_header-primary">Make an Appointment</h2>
     
-              <form class="form-appointment" id="form">
-                <input type="text" id="inputName" class="form-data" name="fullname" placeholder="Full Name">
+              <form class="contact-us_container_form-appointment" id="form">
+                <input type="text" id="inputName" class="contact-us_container_form-appointment_data" name="fullname" placeholder="Full Name">
                 
-                <input type="email" id="inputEmail" class="form-data" name="email" placeholder="example@gmail.com" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}">
+                <input type="email" id="inputEmail" class="contact-us_container_form-appointment_data" name="email" placeholder="example@gmail.com" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}">
                 <p id="resultName"></p>
                 <p id="resultEmail"></p>
-                <select id="inputDate" class="form-select" name="date">
+                <select id="inputDate" class="contact-us_container_form-appointment_select" name="date">
                     <option value="">Please Select</option>
                     <option value="mo">Monday</option>
                     <option value="tu">Tuesday</option>
@@ -702,7 +238,7 @@
                     <option value="th">Thursday</option>
                 </select>
                 
-                <select id="inputTime" class="form-select" name="time">
+                <select id="inputTime" class="contact-us_container_form-appointment_select" name="time">
                     <option value="">4:00 Available</option>
                     <option value="10am">10am</option>
                     <option value="11am">11am</option>
@@ -711,82 +247,84 @@
                 </select>
                 <p id="resultTime"></p>
                 <p id="resultDate"></p>
-                <textarea id="inputMessage" class="form-textarea" name="message" rows="5" cols="20" placeholder="Message"></textarea>
+                <textarea id="inputMessage" class="contact-us_container_form-appointment_textarea" name="message" rows="5" cols="20" placeholder="Message"></textarea>
                 <p id="resultMessage"></p>
-                <input class="form-button" type="submit" value="Book Appointment">
+                <input class="contact-us_container_form-appointment_button" type="submit" value="Book Appointment">
               </form>
               
             </div>
         </section>
         <section class="form-footer">
-            <div class="container">
-                <form class="form-contact">
+            <div class="form-footer_container">
+                <form class="form-footer_container_contact">
                     <div class="form-footer-text">
-                    <h3 class="form-footer-header">Consulting Agency For Your Business</h3>
-                    <p class="form-footer-par">the quick fox jumps over the lazy dog</p>
+                    <h3 class="form-footer_container_contact_header">Consulting Agency For Your Business</h3>
+                    <p class="form-footer_container_contact_par">the quick fox jumps over the lazy dog</p>
                     </div>
-                    <input class="form-footer-button" type="submit" value="Contact Us">
+                    <input class="form-footer_container_contact_button" type="submit" value="Contact Us">
                 </form>
             </div>
         </section>
 
         <footer class="footer">
-            <div class="container">
-            <div class="footer-header">
+            <div class="footer_container">
+            <div class="footer_container_header">
                 <a href="#" class="footer-home-link"><img src="img/KMarketer.png" alt="Home logo"></a>
                 <nav class="footer-social">
-                    <ul class="footer-social-list">
-                        <li><a href="#" class="social"><img class="footer-icon" src="img/icons/facebook.svg" alt="facebook link"></a></li>
-                        <li><a href="#" class="social"><img class="footer-icon" src="img/icons/instagram.svg" alt="instagram link"></a></li>
-                        <li><a href="#" class="social"><img class="footer-icon" src="img/icons/twitter.svg" alt="twitter link"></a></li>
-                        <li><a href="#" class="social"><img class="footer-icon" src="img/icons/youtube.svg" alt="youtube link"></a></li>
+                    <ul class="footer_container_header_social-list">
+                        <li><a href="#" class="social"><img class="footer_container_header_social-list_icon" src="img/icons/facebook.svg" alt="facebook link"></a></li>
+                        <li><a href="#" class="social"><img class="footer_container_header_social-list_icon" src="img/icons/instagram.svg" alt="instagram link"></a></li>
+                        <li><a href="#" class="social"><img class="footer_container_header_social-list_icon" src="img/icons/twitter.svg" alt="twitter link"></a></li>
+                        <li><a href="#" class="social"><img class="footer_container_header_social-list_icon" src="img/icons/youtube.svg" alt="youtube link"></a></li>
                     </ul>
                 </nav>
             </div>
             <hr>
-            <div class="footer-container">
-                <div class="footer-info">
-                    <h5 class="footer-container-header">Company Info</h5>
-                    <a href="#" class="footer-link">About Us</a>
-                    <a href="#" class="footer-link">Carrier</a>
-                    <a href="#" class="footer-link">We are Hiring</a>
-                    <a href="#" class="footer-link">Blog</a>
+            <div class="footer_container_container">
+                <div class="footer_container_container_info">
+                    <h5 class="footer_container_container_info_header">Company Info</h5>
+                    <a href="#" class="footer_container_container_info_link">About Us</a>
+                    <a href="#" class="footer_container_container_info_link">Carrier</a>
+                    <a href="#" class="footer_container_container_info_link">We are Hiring</a>
+                    <a href="#" class="footer_container_container_info_link">Blog</a>
                 </div>
-                <div class="footer-info">
-                    <h5 class="footer-container-header">Legal</h5>
-                    <a href="#" class="footer-link">About Us</a>
-                    <a href="#" class="footer-link">Carrier</a>
-                    <a href="#" class="footer-link">We are Hiring</a>
-                    <a href="#" class="footer-link">Blog</a>
+                <div class="footer_container_container_info">
+                    <h5 class="footer_container_container_info_header">Legal</h5>
+                    <a href="#" class="footer_container_container_info_link">About Us</a>
+                    <a href="#" class="footer_container_container_info_link">Carrier</a>
+                    <a href="#" class="footer_container_container_info_link">We are Hiring</a>
+                    <a href="#" class="footer_container_container_info_link">Blog</a>
                 </div>
-                <div class="footer-info">
-                    <h5 class="footer-container-header">Features</h5>
-                    <a href="#" class="footer-link">Business Marketing</a>
-                    <a href="#" class="footer-link">User Analytics</a>
-                    <a href="#" class="footer-link">Live Chat</a>
-                    <a href="#" class="footer-link">Unlimited Support</a>
+                <div class="footer_container_container_info">
+                    <h5 class="footer_container_container_info_header">Features</h5>
+                    <a href="#" class="footer_container_container_info_link">Business Marketing</a>
+                    <a href="#" class="footer_container_container_info_link">User Analytics</a>
+                    <a href="#" class="footer_container_container_info_link">Live Chat</a>
+                    <a href="#" class="footer_container_container_info_link">Unlimited Support</a>
                 </div>
-                <div class="footer-info">
-                    <h5 class="footer-container-header">Resources</h5>
-                    <a href="#" class="footer-link">IOS &#38; Android </a>
-                    <a href="#" class="footer-link">Watch a Demo</a>
-                    <a href="#" class="footer-link">Customers</a>
-                    <a href="#" class="footer-link">API</a>
+                <div class="footer_container_container_info">
+                    <h5 class="footer_container_container_info_header">Resources</h5>
+                    <a href="#" class="footer_container_container_info_link">IOS &#38; Android </a>
+                    <a href="#" class="footer_container_container_info_link">Watch a Demo</a>
+                    <a href="#" class="footer_container_container_info_link">Customers</a>
+                    <a href="#" class="footer_container_container_info_link">API</a>
                 </div>
-                <div class="footer-info">
-                    <h5 class="footer-container-header">Get in touch</h5>
+                <div class="footer_container_container_info">
+                    <h5 class="footer_container_container_info_header">Get in touch</h5>
 
-                    <form class="footer-subscribe" action="/action_page.php" method="get">
-                    <input type="email" class="footer-email" name="email" placeholder="Your Email" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}" required>
-                    <input class="footer-button" type="submit" value="Subscribe">
+                    <form class="footer_container_container_info_subscribe" action="/action_page.php" method="get">
+                    <input type="email" class="footer_container_container_info_subscribe_email" name="email" placeholder="Your Email" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}" required>
+                    <input class="footer_container_container_info_subscribe_button" type="submit" value="Subscribe">
                     </form>
-                    <p class="form-text">Please insert your email</p>
+                    <p class="footer_container_container_info_form-textt">Please insert your email</p>
                 </div>
             </div>
         </div>
         </footer>
         <div class="footer-final">
+            <div class="footer-final_container">
             <p class="footer-final-text">Made With Love By Figmaland All Right Reserved</p>
+        </div>
         </div>
     </body>
 </html>

@@ -1,0 +1,80 @@
+@use 'variables';
+
+.video-section {
+    margin: 0 auto;
+    display: flex;
+    background-image:  linear-gradient(to bottom, rgba(37, 43, 66, 1), rgba(0, 0, 0, 0.5)), url(/img/backgroundvideo.png);
+    padding-bottom: 80px;
+    justify-content: center;
+    align-items: center;
+
+    &_container {
+        @include variables.container;
+
+        &_section-header {
+            @extend %sectionHeader;
+            padding-bottom: 80px;
+
+            &-title {
+                @extend %headerTitle;
+            }
+            &-text {
+                @extend %headerText;
+                }
+        }
+
+        &_content-video {
+            display: table;
+            width: auto;
+            position: relative;
+            width: 50%;
+
+            &_toshow {
+                display: none;
+            }
+
+            &_playpause {
+                background-image:url(/img/play.svg);
+                background-color: variables.$lightblue;
+                background-repeat:no-repeat;
+                width: 100px;
+                height: 100px;
+                border-radius: 73px;
+                position: absolute;
+                left: 0%;
+                right: 0%;
+                top: 0%;
+                bottom: 15%;
+                margin: auto;
+                background-position: center;
+                cursor: pointer;
+            }   
+        }
+    }
+}
+@media screen and (min-width: 320px) and (max-width: 768px) {
+    .video-hide {
+        display: none;
+    }
+    .video-section_container_content-video_toshow {
+        display: flex;
+        padding: 50px;
+    }
+    .video-section_container {
+        padding: 0 40px;
+        margin: 0;
+    }
+    .video-section_container-section-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 45px 0;
+    }
+    .video-section_container_section-header-title {
+        width: auto;
+        text-align: center;
+    }
+    .video-section_container_section-header-text {
+        width: auto;
+    }
+}  

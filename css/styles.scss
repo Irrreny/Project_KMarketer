@@ -1,5 +1,12 @@
 
 @use 'variables';
+@use 'header-page';
+@use 'features-page';
+@use 'clients-page';
+@use 'contactus-page';
+@use 'footer-page';
+@use 'team-page';
+@use 'video-page';
 
 body {
     margin: 0;
@@ -9,10 +16,6 @@ body {
     letter-spacing: 0.2px;
 }
 
-.container {
-    max-width: 1050px;
-    margin: 0 auto;
-}
 ul {
 padding: 0;
 list-style: none;
@@ -22,18 +25,35 @@ button {
 padding: 0;
 }
 
-.features, .clients, .team {
-    background-color: variables.$darkblue;
+.error {
+    color: red;
+}
+.success {
+    color: green;
+}
+#resultName, #resultEmail, #resultMessage, #resultSelect, #resultDate, #resultTime {
+    margin: 0;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    width: 270px;
+}
+#resultMessage {
+    width: 500px;
+}
+
+
+#resultMessage {
+grid-column: 1 / span 2;
+}
+
+::placeholder {
+    color: variables.$mutedgrey;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    font-family: Montserrat;
 }
 
 
 
-
-
-@use 'header-page';
-@use 'features-page';
-@use 'clients-page';
-@use 'contactus-page';
-@use 'footer-page';
-@use 'team-page';
-@use 'video-page';
