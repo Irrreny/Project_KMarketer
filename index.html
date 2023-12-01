@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-        <script src="index.js"></script>
+        <script type="module" src="index.js"></script>
         <style>
             :root {
                 --orange: #FFA62B;
@@ -722,7 +722,51 @@
         }
 
     
+       .swiper {
+       width: 100%;
+       height: 100%;
+       }
+
+       .card-content {
+        margin: 15px 0;
+       }
        
+       .my-swiper {
+        overflow: hidden;
+        width: 100%;
+        
+        position: relative;
+    }
+    
+    .my-swiper-wrapper {
+        display: flex;
+        transition: transform 0.3s ease-in-out;
+        
+    }
+    
+    .my-swiper-slide {
+        flex: 0 0 33.33%;
+        width: 100%;
+    }
+    
+    .my-prev-button img, .my-next-button img {
+        position: absolute;
+        padding: 10px 15px;
+        top: 35%;
+        cursor: pointer;
+        width: 80px;
+        height: 80px;
+        border: none;
+        
+    }
+    .my-next-button img {
+        right: 10px;
+    }
+    
+    .my-prev-button img {
+        left: 10px;
+    }
+    
         </style>
     </head>
     <body>
@@ -834,7 +878,123 @@
                     <h2 class="section-header-title">What Clients Say</h2>
                     <p class="section-header-text">Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics </p>
                 </div>
-                        <div class="grid-cards">
+
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="card">
+                            <div class="clients-card-header">
+                                <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                <img class="clients-card-icon" src="img/icons/star_empty.svg" alt="empty star icon">
+                            </div>
+                            <p class="card-content">Slate helps you see how many more days you need to work to reach your financial goal.</p>
+                            <div class="card-footer">
+                                <img class="card-photo-icon" src="img/icons/photo_regina.svg" alt="photo icon of regina miles">
+                                <a href="#" class="card-name-link">Regina Miles</a>
+                                <h6 class="card-footer-name" id="ceo">ceo</h6>
+                            </div>
+                            </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card">
+                            <div class="clients-card-header">
+                                <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                <img class="clients-card-icon" src="img/icons/star_empty.svg" alt="empty star icon">
+                            </div>
+                            <p class="card-content">Slate helps you see how many more days you need to work to reach your financial goal.</p>
+                            <div class="card-footer">
+                                <img class="card-photo-icon" src="img/icons/photo_ashley.svg" alt="photo icon of ashley fletcher">
+                                <a href="#" class="card-name-link">Ashley Fletcher</a>
+                                <h6 class="card-footer-name">Designer</h6>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card">
+                            <div class="clients-card-header">
+                                <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                <img class="clients-card-icon" src="img/icons/star_empty.svg" alt="empty star icon">
+                            </div>
+                            <p class="card-content">Slate helps you see how many more days you need to work to reach your financial goal.</p>
+                            <div class="card-footer">
+                                <img class="card-photo-icon" src="img/icons/photo_avie.svg" alt="photo icon of avie beaton">
+                                <a href="#" class="card-name-link">Avie Beaton</a>
+                                <h6 class="card-footer-name">Co-founder</h6>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card">
+                            <div class="clients-card-header">
+                                <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                <img class="clients-card-icon" src="img/icons/star_empty.svg" alt="empty star icon">
+                            </div>
+                            <p class="card-content">Slate helps you see how many more days you need to work to reach your financial goal.</p>
+                            <div class="card-footer">
+                                <img class="card-photo-icon" src="img/icons/photo_avie.svg" alt="photo icon of avie beaton">
+                                <a href="#" class="card-name-link">Avie Beaton</a>
+                                <h6 class="card-footer-name">Co-founder</h6>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card">
+                            <div class="clients-card-header">
+                                <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                <img class="clients-card-icon" src="img/icons/star_empty.svg" alt="empty star icon">
+                            </div>
+                            <p class="card-content">Slate helps you see how many more days you need to work to reach your financial goal.</p>
+                            <div class="card-footer">
+                                <img class="card-photo-icon" src="img/icons/photo_avie.svg" alt="photo icon of avie beaton">
+                                <a href="#" class="card-name-link">Avie Beaton</a>
+                                <h6 class="card-footer-name">Co-founder</h6>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card">
+                            <div class="clients-card-header">
+                                <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
+                                <img class="clients-card-icon" src="img/icons/star_empty.svg" alt="empty star icon">
+                            </div>
+                            <p class="card-content">Slate helps you see how many more days you need to work to reach your financial goal.</p>
+                            <div class="card-footer">
+                                <img class="card-photo-icon" src="img/icons/photo_avie.svg" alt="photo icon of avie beaton">
+                                <a href="#" class="card-name-link">Avie Beaton</a>
+                                <h6 class="card-footer-name">Co-founder</h6>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+                  
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                  
+                  </div>
+
+
+                      <!-- <div class="grid-cards">
                             <div class="card">
                             <div class="clients-card-header">
                                 <img class="clients-card-icon" src="img/icons/star.svg" alt="full star icon">
@@ -882,7 +1042,7 @@
                                         <h6 class="card-footer-name">Co-founder</h6>
                                     </div>
                                 </div>
-                        </div>
+                        </div> --> 
             </div>
         </section>
 
@@ -892,6 +1052,104 @@
                     <h2 class="section-header-title">Meet Our Team</h2>
                     <p class="section-header-text">Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics </p>
                 </div>
+                <div class="my-swiper">
+                    <div class="my-swiper-wrapper">
+                      <div class="my-swiper-slide">
+                        <div class="card" id="team-card">
+                            <img class="photo-tohide" src="img/mediaphoto-girl.png" alt="photo of CEO">
+                            <img class="photo-toshow" src="img/mediaphoto-girl.png" alt="photo of CEO">
+                            <div class="card-body">
+                                <h5 class="card-body-name">Regina Miles</h5>
+                                <p class="team-card-job" id="ceo">ceo</p>
+                                <div class="team-card-links">
+                                    <a href="#"><img src="img/icons/facebook-blue.svg" alt="facebook link"></a>
+                                    <a href="#"><img src="img/icons/instagram-blue.svg" alt="instagram link"></a>
+                                    <a href="#"><img src="img/icons/twitter-blue.svg" alt="twitter link"></a>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="my-swiper-slide">
+                        <div class="card" id="team-card">
+                            <img class="photo-tohide" src="img/coverphoto-regina.png" alt="photo of Consultant">
+                            <img class="photo-toshow" src="img/mediaphoto-guy.png" alt="photo of CEO">
+                            <div class="card-body">
+                                <h5 class="card-body-name">Rodney Stratton</h5>
+                                <p class="team-card-job">Consultant</p>
+                                <div class="team-card-links">
+                                    <a href="#"><img src="img/icons/facebook-blue.svg" alt="facebook link"></a>
+                                    <a href="#"><img src="img/icons/instagram-blue.svg" alt="instagram link"></a>
+                                    <a href="#"><img src="img/icons/twitter-blue.svg" alt="twitter link"></a>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="my-swiper-slide">
+                        <div class="card" id="team-card">
+                            <img class="photo-tohide" src="img/coverphoto-avie.png" alt="photo of Co-Founder">
+                            <img class="photo-toshow" src="img/mediaphoto-girl.png" alt="photo of CEO">
+                            <div class="card-body">
+                                <h5 class="card-body-name">Avie Beaton</h5>
+                                <p class="team-card-job">Co-Founder</p>
+                                <div class="team-card-links">
+                                    <a href="#"><img src="img/icons/facebook-blue.svg" alt="facebook link"></a>
+                                    <a href="#"><img src="img/icons/instagram-blue.svg" alt="instagram link"></a>
+                                    <a href="#"><img src="img/icons/twitter-blue.svg" alt="twitter link"></a>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="my-swiper-slide">
+                        <div class="card" id="team-card">
+                            <img class="photo-tohide" src="img/mediaphoto-girl.png" alt="photo of Co-Founder">
+                            <img class="photo-toshow" src="img/mediaphoto-girl.png" alt="photo of CEO">
+                            <div class="card-body">
+                                <h5 class="card-body-name">Avie Beaton</h5>
+                                <p class="team-card-job">Co-Founder</p>
+                                <div class="team-card-links">
+                                    <a href="#"><img src="img/icons/facebook-blue.svg" alt="facebook link"></a>
+                                    <a href="#"><img src="img/icons/instagram-blue.svg" alt="instagram link"></a>
+                                    <a href="#"><img src="img/icons/twitter-blue.svg" alt="twitter link"></a>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="my-swiper-slide">
+                        <div class="card" id="team-card">
+                            <img class="photo-tohide" src="img/coverphoto-avie.png" alt="photo of Co-Founder">
+                            <img class="photo-toshow" src="img/mediaphoto-girl.png" alt="photo of CEO">
+                            <div class="card-body">
+                                <h5 class="card-body-name">Avie Beaton</h5>
+                                <p class="team-card-job">Co-Founder</p>
+                                <div class="team-card-links">
+                                    <a href="#"><img src="img/icons/facebook-blue.svg" alt="facebook link"></a>
+                                    <a href="#"><img src="img/icons/instagram-blue.svg" alt="instagram link"></a>
+                                    <a href="#"><img src="img/icons/twitter-blue.svg" alt="twitter link"></a>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="my-swiper-slide">
+                        <div class="card" id="team-card">
+                            <img class="photo-tohide" src="img/coverphoto-regina.png" alt="photo of Consultant">
+                            <img class="photo-toshow" src="img/mediaphoto-guy.png" alt="photo of CEO">
+                            <div class="card-body">
+                                <h5 class="card-body-name">Rodney Stratton</h5>
+                                <p class="team-card-job">Consultant</p>
+                                <div class="team-card-links">
+                                    <a href="#"><img src="img/icons/facebook-blue.svg" alt="facebook link"></a>
+                                    <a href="#"><img src="img/icons/instagram-blue.svg" alt="instagram link"></a>
+                                    <a href="#"><img src="img/icons/twitter-blue.svg" alt="twitter link"></a>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                     
+                    </div>
+                    <div class="my-prev-button"><img src="img/arrow prev.png" alt="previous arrow"></div>
+                    <div class="my-next-button"><img src="img/arrow next.png" alt="next arrow"></div>
+                  </div>
+
                 <div class="grid-cards">
                     <div class="card" id="team-card">
                         <img class="photo-tohide" src="img/coverphoto-regina.png" alt="photo of CEO">

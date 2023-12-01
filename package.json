@@ -9,7 +9,11 @@
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "parcel": "^2.10.3"
+  "@parcel/resolver-default": {
+    "packageExports": true
+  },
+  "dependencies": {
+    "parcel": "^2.10.3",
+    "swiper": "^11.0.5"
   }
 }

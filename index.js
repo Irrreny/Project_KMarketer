@@ -1,39 +1,86 @@
-//-----Home Work 23(promises, async/await)------//
+
+import Swiper from 'swiper/bundle'
+import { Navigation, Pagination } from 'swiper/modules'
+
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import 'swiper/css/effect-coverflow'
+
+
+
 document.addEventListener(`DOMContentLoaded`, function () {
-  //----------Async/Await----------//
 
-  const getPostComment = async () => {
-  let response = await fetch(`https://jsonplaceholder.typicode.com/users/3`)
-  let user = await response.json()
+  //------Swiper Clients section-----//
 
-  let postsResponse = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${user.id}`)
-  let post = await postsResponse.json()
-  console.table(post)
-  
-  let commentsResponse = await fetch(`https://jsonplaceholder.typicode.com/posts/1/comments?id=${user.id}`)
-  let comment = await commentsResponse.json()
-  console.table(comment)
+  new Swiper(".swiper", {
+    modules: [Navigation, Pagination],
+    slidesPerView: 3,
+    breakpoints: {
+      // when window width is >= 320px
+      280: {
+        slidesPerView: 1,
+        
+      },
+      // when window width is >= 480px
+      580: {
+        slidesPerView: 2,
+      
+      },
+      // when window width is >= 800px
+      800: {
+        slidesPerView: 3,
+        
+      }
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
+   //------Swiper Teams section-----//
+
+   
+//-------My Swiper------//
+const swiperWrapper = document.querySelector('.my-swiper-wrapper')
+const slides = document.querySelectorAll('.my-swiper-slide')
+const slidesPerView = 3
+let currentIndex = 0
+
+function goToSlide(index) {
+  if (index < 0 || index >= slides.length - slidesPerView + 1) return
+
+  currentIndex = index
+  const offset = -currentIndex * (100 / slidesPerView)
+  swiperWrapper.style.transform = `translateX(${offset}%)`
 }
-getPostComment()
 
-//----------Promises----------//
-
-function getPostsComments(userId) {
-  fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)
-  .then(response => response.json())
-  .then(data => console.table(data))
-
-  fetch(`https://jsonplaceholder.typicode.com/posts/1/comments?id=${userId}`)
-  .then(comment => comment.json())
-  .then(data2 => console.table(data2))
-  .catch(error => console.log(error))
+function nextSlide() {
+  currentIndex = Math.min(currentIndex + 1, slides.length - slidesPerView)
+  if (currentIndex === slides.length - slidesPerView) {
+    currentIndex = 0
+  }
+  goToSlide(currentIndex)
 }
-getPostsComments(3)
-})
 
+function prevSlide() {
+  currentIndex = Math.max(currentIndex - 1, 0);
+  goToSlide(currentIndex);
+}
+
+const nextButton = document.querySelector('.my-next-button')
+const prevButton = document.querySelector('.my-prev-button')
+
+nextButton.addEventListener('click', nextSlide)
+prevButton.addEventListener('click', prevSlide)
 
 //------Form Validation--------//
-document.addEventListener(`DOMContentLoaded`, function () {
+
   const form = document.getElementById('form')
   const inputName = document.getElementById('inputName')
   const inputEmail = document.getElementById(`inputEmail`)
@@ -98,76 +145,15 @@ document.addEventListener(`DOMContentLoaded`, function () {
     element.style.color = `green`
   }
 
+
+
+
+
+
 })
 
 
 
-//----------Regex----------//
-//----------1----------//
 
-const string = `Today I went to the shop 123 and bought 4 bananas.`
-const numbers = /\d+/g
-const numbersFind = string.match(numbers)
-console.log(numbersFind)
-
-//----------2----------//
-
-const text = `City postal codes: 12345, 98765, 54321`
-const postalCode = /\b[0-9]{5}\b/g
-const codeMatching =  text.match(postalCode)
-
-codeMatching.forEach((code) => {
-
-if (code) {
-console.log(`${code} is valid`)
-} else {
-  console.log(`The postal code is invalid`)
-}
-})
-
-//----------3----------//
-
-const moviesList = [
-`1 The Shawshank Redemption (1994)`,
-`2 The Godfather (1972)`,
-`3 The Godfather: Part II (1974)`,
-`4 Pulp Fiction (1994)`,
-`5 The Good, the Bad and the Ugly (1966)`,
-`6 The Dark Knight (2008)`,
-`7 12 Angry Men (1957)`,
-`8 Schindler's List (1993)`,
-`9 The Lord of the Rings: The Return of the King (2003)`,
-`10 Fight Club (1999)`
-]
-
-moviesList.forEach((movie) => {
-  const year = /\d{4}/g
-  const movieYear = movie.match(year)
-
-  if (movieYear > 1990) {
-    console.log(movie)
-  }
-})
-
-//----------4----------//
-
-const colors = [
-`AliceBlue #F0F8FF`,
-`AntiqueWhite #FAEBD7`,
-`Aqua #00FFFF`,
-`Aquamarine #7FFFD4`,
-`Azure #F0FFFF`,
-`12 bit:`,
-`White #FFF`,
-`Red #F00`,
-`Green #0F0`,
-`Blue #00F`
-]
-
-let colorString = colors.toString()
-const colorsPattern = /#[A-Za-z0-9]{6}\b/g
-const colorsMatch = colorString.match(colorsPattern)
-console.log(colorsMatch)
- 
 
 
