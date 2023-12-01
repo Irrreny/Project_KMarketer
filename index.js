@@ -13,7 +13,7 @@ document.addEventListener(`DOMContentLoaded`, function () {
 
   //------Swiper Clients section-----//
 
-  new Swiper(".swiper", {
+  const swiper = new Swiper(".swiper", {
     modules: [Navigation, Pagination],
     slidesPerView: 3,
     breakpoints: {
@@ -41,11 +41,61 @@ document.addEventListener(`DOMContentLoaded`, function () {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
+
+    //------Saved slide task-----//
+    on: {
+      slideChange: function () {
+        localStorage.setItem('currentSlide', this.activeIndex);
+      }
+    }
   });
+  
+  const savedSlide = localStorage.getItem('currentSlide')
+  if (savedSlide) {
+    swiper.slideTo(savedSlide)
+}
 
    //------Swiper Teams section-----//
 
-   
+   //------Cookies----//
+   function getCookie(name) {
+    const cookies = document.cookie.split(';')
+    for (let i = 0; i < cookies.length; i++) {
+      const cookie = cookies[i].trim()
+      if (cookie.startsWith(name + '=')) {
+        return cookie.substring(name.length + 1)
+      }
+    }
+    return null
+  }
+
+  function setCookie(name, value, daysToExprire) {
+    const date = new Date()
+    date.setTime(date.getTime() + (daysToExprire * 24 * 60 * 60 * 1000))
+    const expires = 'expires=' + date.toUTCString()
+    document.cookie = name + '=' + value + ';' + expires + ';path=/'
+  }
+
+  const loggedIn = getCookie('loggedIn')
+  if (!loggedIn) {
+  const username = prompt('Insert your login:')
+  const password = prompt('Insert your password:')
+  
+  setCookie('loggedIn', 'true', 30)
+  setCookie('username', username, 30)
+  setCookie('password', password, 30)
+} else {
+  
+  getCookie('username')
+  getCookie('password')
+  
+}
+//------Login time task-----//
+const currentTime = new Date().toLocaleString()
+
+sessionStorage.setItem('loginTime', currentTime)
+const savedTime = sessionStorage.getItem('loginTime')
+console.log('The Login Date and Time', savedTime)
 
 //------Form Validation--------//
 
