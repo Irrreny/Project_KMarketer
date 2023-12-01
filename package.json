@@ -11,5 +11,11 @@
   "license": "ISC",
   "devDependencies": {
     "parcel": "^2.10.3"
+  },
+  "@parcel/resolver-default": {
+    "packageExports": true
+  },
+  "dependencies": {
+    "swiper": "^11.0.5"
   }
 }
