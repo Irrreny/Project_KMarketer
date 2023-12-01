@@ -46,6 +46,38 @@ document.addEventListener(`DOMContentLoaded`, function () {
    //------Swiper Teams section-----//
 
    
+//-------My Swiper------//
+const swiperWrapper = document.querySelector('.my-swiper-wrapper')
+const slides = document.querySelectorAll('.my-swiper-slide')
+const slidesPerView = 3
+let currentIndex = 0
+
+function goToSlide(index) {
+  if (index < 0 || index >= slides.length - slidesPerView + 1) return
+
+  currentIndex = index
+  const offset = -currentIndex * (100 / slidesPerView)
+  swiperWrapper.style.transform = `translateX(${offset}%)`
+}
+
+function nextSlide() {
+  currentIndex = Math.min(currentIndex + 1, slides.length - slidesPerView)
+  if (currentIndex === slides.length - slidesPerView) {
+    currentIndex = 0
+  }
+  goToSlide(currentIndex)
+}
+
+function prevSlide() {
+  currentIndex = Math.max(currentIndex - 1, 0);
+  goToSlide(currentIndex);
+}
+
+const nextButton = document.querySelector('.my-next-button')
+const prevButton = document.querySelector('.my-prev-button')
+
+nextButton.addEventListener('click', nextSlide)
+prevButton.addEventListener('click', prevSlide)
 
 //------Form Validation--------//
 

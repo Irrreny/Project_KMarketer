@@ -731,8 +731,42 @@
         margin: 15px 0;
        }
        
-     
-       
+       .my-swiper {
+        overflow: hidden;
+        width: 100%;
+        
+        position: relative;
+    }
+    
+    .my-swiper-wrapper {
+        display: flex;
+        transition: transform 0.3s ease-in-out;
+        
+    }
+    
+    .my-swiper-slide {
+        flex: 0 0 33.33%;
+        width: 100%;
+    }
+    
+    .my-prev-button img, .my-next-button img {
+        position: absolute;
+        padding: 10px 15px;
+        top: 35%;
+        cursor: pointer;
+        width: 80px;
+        height: 80px;
+        border: none;
+        
+    }
+    .my-next-button img {
+        right: 10px;
+    }
+    
+    .my-prev-button img {
+        left: 10px;
+    }
+    
         </style>
     </head>
     <body>
@@ -846,9 +880,7 @@
                 </div>
 
                 <div class="swiper">
-                    <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
-                      <!-- Slides -->
                       <div class="swiper-slide">
                         <div class="card">
                             <div class="clients-card-header">
@@ -1020,7 +1052,103 @@
                     <h2 class="section-header-title">Meet Our Team</h2>
                     <p class="section-header-text">Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics </p>
                 </div>
-
+                <div class="my-swiper">
+                    <div class="my-swiper-wrapper">
+                      <div class="my-swiper-slide">
+                        <div class="card" id="team-card">
+                            <img class="photo-tohide" src="img/mediaphoto-girl.png" alt="photo of CEO">
+                            <img class="photo-toshow" src="img/mediaphoto-girl.png" alt="photo of CEO">
+                            <div class="card-body">
+                                <h5 class="card-body-name">Regina Miles</h5>
+                                <p class="team-card-job" id="ceo">ceo</p>
+                                <div class="team-card-links">
+                                    <a href="#"><img src="img/icons/facebook-blue.svg" alt="facebook link"></a>
+                                    <a href="#"><img src="img/icons/instagram-blue.svg" alt="instagram link"></a>
+                                    <a href="#"><img src="img/icons/twitter-blue.svg" alt="twitter link"></a>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="my-swiper-slide">
+                        <div class="card" id="team-card">
+                            <img class="photo-tohide" src="img/coverphoto-regina.png" alt="photo of Consultant">
+                            <img class="photo-toshow" src="img/mediaphoto-guy.png" alt="photo of CEO">
+                            <div class="card-body">
+                                <h5 class="card-body-name">Rodney Stratton</h5>
+                                <p class="team-card-job">Consultant</p>
+                                <div class="team-card-links">
+                                    <a href="#"><img src="img/icons/facebook-blue.svg" alt="facebook link"></a>
+                                    <a href="#"><img src="img/icons/instagram-blue.svg" alt="instagram link"></a>
+                                    <a href="#"><img src="img/icons/twitter-blue.svg" alt="twitter link"></a>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="my-swiper-slide">
+                        <div class="card" id="team-card">
+                            <img class="photo-tohide" src="img/coverphoto-avie.png" alt="photo of Co-Founder">
+                            <img class="photo-toshow" src="img/mediaphoto-girl.png" alt="photo of CEO">
+                            <div class="card-body">
+                                <h5 class="card-body-name">Avie Beaton</h5>
+                                <p class="team-card-job">Co-Founder</p>
+                                <div class="team-card-links">
+                                    <a href="#"><img src="img/icons/facebook-blue.svg" alt="facebook link"></a>
+                                    <a href="#"><img src="img/icons/instagram-blue.svg" alt="instagram link"></a>
+                                    <a href="#"><img src="img/icons/twitter-blue.svg" alt="twitter link"></a>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="my-swiper-slide">
+                        <div class="card" id="team-card">
+                            <img class="photo-tohide" src="img/mediaphoto-girl.png" alt="photo of Co-Founder">
+                            <img class="photo-toshow" src="img/mediaphoto-girl.png" alt="photo of CEO">
+                            <div class="card-body">
+                                <h5 class="card-body-name">Avie Beaton</h5>
+                                <p class="team-card-job">Co-Founder</p>
+                                <div class="team-card-links">
+                                    <a href="#"><img src="img/icons/facebook-blue.svg" alt="facebook link"></a>
+                                    <a href="#"><img src="img/icons/instagram-blue.svg" alt="instagram link"></a>
+                                    <a href="#"><img src="img/icons/twitter-blue.svg" alt="twitter link"></a>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="my-swiper-slide">
+                        <div class="card" id="team-card">
+                            <img class="photo-tohide" src="img/coverphoto-avie.png" alt="photo of Co-Founder">
+                            <img class="photo-toshow" src="img/mediaphoto-girl.png" alt="photo of CEO">
+                            <div class="card-body">
+                                <h5 class="card-body-name">Avie Beaton</h5>
+                                <p class="team-card-job">Co-Founder</p>
+                                <div class="team-card-links">
+                                    <a href="#"><img src="img/icons/facebook-blue.svg" alt="facebook link"></a>
+                                    <a href="#"><img src="img/icons/instagram-blue.svg" alt="instagram link"></a>
+                                    <a href="#"><img src="img/icons/twitter-blue.svg" alt="twitter link"></a>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="my-swiper-slide">
+                        <div class="card" id="team-card">
+                            <img class="photo-tohide" src="img/coverphoto-regina.png" alt="photo of Consultant">
+                            <img class="photo-toshow" src="img/mediaphoto-guy.png" alt="photo of CEO">
+                            <div class="card-body">
+                                <h5 class="card-body-name">Rodney Stratton</h5>
+                                <p class="team-card-job">Consultant</p>
+                                <div class="team-card-links">
+                                    <a href="#"><img src="img/icons/facebook-blue.svg" alt="facebook link"></a>
+                                    <a href="#"><img src="img/icons/instagram-blue.svg" alt="instagram link"></a>
+                                    <a href="#"><img src="img/icons/twitter-blue.svg" alt="twitter link"></a>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                     
+                    </div>
+                    <div class="my-prev-button"><img src="img/arrow prev.png" alt="previous arrow"></div>
+                    <div class="my-next-button"><img src="img/arrow next.png" alt="next arrow"></div>
+                  </div>
 
                 <div class="grid-cards">
                     <div class="card" id="team-card">
