@@ -1,15 +1,54 @@
-//------Form Validation--------//
-import Swiper from 'swiper'
+
+import Swiper from 'swiper/bundle'
 import { Navigation, Pagination } from 'swiper/modules'
 
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
-
+import 'swiper/css/effect-coverflow'
 
 
 
 document.addEventListener(`DOMContentLoaded`, function () {
+
+  //------Swiper Clients section-----//
+
+  new Swiper(".swiper", {
+    modules: [Navigation, Pagination],
+    slidesPerView: 3,
+    breakpoints: {
+      // when window width is >= 320px
+      280: {
+        slidesPerView: 1,
+        
+      },
+      // when window width is >= 480px
+      580: {
+        slidesPerView: 2,
+      
+      },
+      // when window width is >= 800px
+      800: {
+        slidesPerView: 3,
+        
+      }
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
+   //------Swiper Teams section-----//
+
+   
+
+//------Form Validation--------//
+
   const form = document.getElementById('form')
   const inputName = document.getElementById('inputName')
   const inputEmail = document.getElementById(`inputEmail`)
@@ -74,19 +113,7 @@ document.addEventListener(`DOMContentLoaded`, function () {
     element.style.color = `green`
   }
 
-//------Swiper-----//
 
-  new Swiper(".swiper", {
-    modules: [Navigation, Pagination],
-    pagination: {
-      el: ".swiper-pagination",
-      type: "progressbar",
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
 
 
 
